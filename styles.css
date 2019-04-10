@@ -3,20 +3,68 @@
   font-family: segoe UI, sans-serif;
   text-decoration: none;
 }
-
 body{
-  background-image: url(img/home.jpg);
-  background-size: cover;
+    overflow-x: hidden;
+}
+#header-band{
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    background-color: white;
+    position: sticky;
+    top:0px;
+    z-index: 2;
+}
+
+#header-text{
+  text-align: center;
+}
+
+section{
+  padding: 20px;
+  min-height: 200px;
+  color: white;
   background-color: grey;
-  background-blend-mode: multiply;
+  order-bottom: 2px solid pink
+
+}
+
+#section-top{
+  background-image: linear-gradient(to right,blue 0%,red 100%), url(img/viaduct.jpg);
+  background-size: cover;
+  background-blend-mode:color-dodge;
+  color: #000000;
+  min-height: 500px;
+}
+
+#section-top > .headline{
+  margin-top: 5vh;
+  background-color: rgba(201, 76, 76, 0.8);
+  Padding: 5px;
+}
+
+#section-middle-two{
+  background-image: linear-gradient(to right,purple 0%,green 100%), url(img/home.jpg);
+  background-size:cover;
+  background-blend-mode:color-dodge;
+  color: #000000;
+}
+
+#section-footer{
+  background-color: #333333;
+  max-height: 200px;
+}
+
+.project-title{
+  padding-top: 5vh;
 }
 
 .menu-burger{
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 20px;
+  top: 20px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
 }
 
 .burger-line{
@@ -30,10 +78,11 @@ body{
   display: none;
   position: fixed;
   height: 100%;
-  background-color: rgba(201, 76, 76, 0.7);
+  background-color: rgba(255, 0, 153, 0.6);
   right: 0px;
   top:0px;
   padding: 50px 0px 50px 0px;
+  z-index: 2;
 }
 
 #main-menu.show{
@@ -44,15 +93,48 @@ body{
   font-size: 2.5rem;
   text-align: right;
   padding: 0px 40px 10px 40px;
-  border-left: 2px solid rgba(201, 76, 76, 0);
+  border-left: 12px solid rgba(201, 76, 76, 0);
 }
 
 .menu-item:hover{
-  border-left: 2px solid rgba(201, 76, 76, 1);
-  background-color: rgba(201, 76, 76, 0.3);
+  border-left: 12px solid rgba(20, 255, 218, 1);
+  background-color: rgba(255, 0, 153, 0.1);
+}
+
+.decoration-container{
+  width: 0px;
+  height: 0px;
+  border-width: 0px;
+  position: relative;
 }
 
 .decoration{
-  font-size: 20rem;
-  position:absolute;
+  position: absolute;
+  opacity: 0.3;
+  top: -20px;
+  border: 0px solid black;
+  transform:skewX(-20deg);
+}
+
+.decoration-container > .odd{
+  transform:skewX(20deg);
+}
+
+.neon-pink{
+  background-color: rgb(255, 0, 153);
+}
+.neon-yellow{
+  background-color: rgb(243, 243, 21);
+}
+.neon-blue{
+  background-color: rgb(20, 255, 218);
+}
+.neon-green{
+  background-color: rgb(131, 245, 44);
+}
+.neon-purple{
+  background-color: rgb(110, 13, 208);
+}
+.neon-orange{
+  background-color: rgb(255, 102, 0);
 }
