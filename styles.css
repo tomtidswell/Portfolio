@@ -3,17 +3,28 @@
   font-family: segoe UI, sans-serif;
   text-decoration: none;
 }
+
 body{
     overflow-x: hidden;
 }
+
+a, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
 #header-band{
+    position: absolute;
     width: 100%;
     padding: 8px;
     font-size: 1rem;
-    background-color: white;
-    position: sticky;
     top:0px;
     z-index: 2;
+    background-color: rgba(255,255,255,0.5);
+}
+#header-band.scrolled{
+    position: fixed;
+    background-color: white;
 }
 
 #header-text{
@@ -21,33 +32,67 @@ body{
 }
 
 section{
-  padding: 20px;
+  position: relative;
+  padding: 30px;
   min-height: 200px;
   color: white;
   background-color: grey;
-  order-bottom: 2px solid pink
-
+  display: block;
+  vertical-align: middle ;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Vertical center alignment */
+  justify-content: center;
 }
 
-#section-top{
-  background-image: linear-gradient(to right,blue 0%,red 100%), url(img/viaduct.jpg);
+#section-one.map{
+  background-image: linear-gradient(to right, #ffffff 0%, rgb(110, 13, 208) 20%, rgb(255, 0, 153) 50%, rgb(255, 102, 0) 80%, #ffffff 100%), url(img/map-city.jpg);
+  background-size: cover;
+  background-blend-mode:screen ;
+  background-position: center bottom;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+#section-one.viaduct{
+  background-image: linear-gradient(to right, #888888 0%, #555555 20%, darkred 50%, #555555 80%, #888888 100%), url(img/viaduct-crop.png);
   background-size: cover;
   background-blend-mode:color-dodge;
+  background-position: center top;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+.headline{
   color: #000000;
-  min-height: 500px;
+  padding: 5px;
+  margin: 10px;
 }
 
-#section-top > .headline{
-  margin-top: 5vh;
-  background-color: rgba(201, 76, 76, 0.8);
-  Padding: 5px;
-}
-
-#section-middle-two{
-  background-image: linear-gradient(to right,purple 0%,green 100%), url(img/home.jpg);
+#section-three{
+  background-image: linear-gradient(to right, darkgreen 50%, white 100%), url(img/home.jpg);
   background-size:cover;
   background-blend-mode:color-dodge;
   color: #000000;
+}
+
+#section-four{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Vertical center alignment */
+  justify-content: center; /* Horizontal center alignment */
 }
 
 #section-footer{
@@ -56,7 +101,8 @@ section{
 }
 
 .project-title{
-  padding-top: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .menu-burger{
@@ -76,65 +122,68 @@ section{
 
 #main-menu{
   display: none;
+}
+#main-menu.show{
+  display: flex;
+  flex-direction: column;
   position: fixed;
   height: 100%;
-  background-color: rgba(255, 0, 153, 0.6);
   right: 0px;
   top:0px;
+  background-color: rgba(2,2,2, 0.7);
   padding: 50px 0px 50px 0px;
   z-index: 2;
-}
-
-#main-menu.show{
-  display: inline;
+  text-align: right;
 }
 
 .menu-item{
-  font-size: 2.5rem;
-  text-align: right;
   padding: 0px 40px 10px 40px;
-  border-left: 12px solid rgba(201, 76, 76, 0);
+  border-left: 12px solid rgba(20, 255, 218, 0);
+  list-style: none;
+  text-decoration: none;
 }
 
 .menu-item:hover{
-  border-left: 12px solid rgba(20, 255, 218, 1);
-  background-color: rgba(255, 0, 153, 0.1);
+  border-left-color: rgba(20, 255, 218, 1);
+}
+
+.menu-item > a{
+  color: white;
+  font-size: 2.5rem;
 }
 
 .decoration-container{
-  width: 0px;
-  height: 0px;
   border-width: 0px;
   position: relative;
 }
 
 .decoration{
   position: absolute;
-  opacity: 0.3;
-  top: -20px;
+  opacity: 0.5;
+  top: 0px;
   border: 0px solid black;
   transform:skewX(-20deg);
 }
 
-.decoration-container > .odd{
+.odd{
   transform:skewX(20deg);
 }
 
 .neon-pink{
-  background-color: rgb(255, 0, 153);
+  background-color: rgba(255, 0, 153, 0.6);
 }
 .neon-yellow{
-  background-color: rgb(243, 243, 21);
+  background-color: rgba(243, 243, 21, 0.6);
 }
 .neon-blue{
-  background-color: rgb(20, 255, 218);
+  background-color: rgba(20, 255, 218, 0.6);
 }
 .neon-green{
-  background-color: rgb(131, 245, 44);
+  background-color: rgba(131, 245, 44, 0.6);
 }
 .neon-purple{
-  background-color: rgb(110, 13, 208);
+  background-color: rgba(110, 13, 208, 0.6);
 }
 .neon-orange{
-  background-color: rgb(255, 102, 0);
+  background-color: rgba(255, 102, 0, 0.6);
 }
