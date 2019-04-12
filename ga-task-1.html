@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+  <title>Tom Tidswell</title>
+  <style>
+    body {
+      text-align: center;
+      background: url("https://static.dezeen.com/uploads/2017/01/centre-georges-pompidou-anniversary-architecture-paris-france_dezeen_1704_sq.jpg");
+      background-size: cover;
+      background-position: center;
+      color: black;
+      font-family: Tahoma, Geneva, sans-serif;
+      margin:0px;
+    }
+
+    #top{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 5px;
+    }
+
+    .clover{
+      border: 5px solid white;
+      line-height: 75%;
+    }
+
+    #profile-bio{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      width: 20vw;
+      height:20vw;
+      min-width:170px;
+      min-height:170px;
+      border-radius: 40vw 20vw 0vw 20vw;
+      grid-column: 1;
+      grid-row: 1;
+      padding: 5px;
+      margin-left: auto;
+      margin-top: auto;
+    }
+    #profile-bio > p{
+      color: rgb(255, 102, 0);
+      background-color:white;
+      margin: 2px 1px;
+      padding: 6px 8px;
+      font-size: 1.5rem;
+    }
+
+    #profile-pic{
+      background-image: url("https://s3.amazonaws.com/f6s-public/profiles/1398823_original.jpg");
+      background-size: cover;
+      width: 30vw;
+      height: 30vw;
+      max-width: 600px;
+      max-height: 600px;
+      border-radius: 20vw 40vw 20vw 0;
+      grid-column: 2;
+      grid-row: 1;
+      margin-right: auto;
+      margin-top: auto;
+    }
+
+    #profile-contact{
+      grid-column: 1;
+      grid-row: 2;
+      width: 13vw;
+      height:13vw;
+      min-width:120px;
+      min-height:120px;
+      border-radius: 20vw 0vw 20vw 40vw;
+      padding: 5px;
+      display:flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      margin-left: auto;
+    }
+    #profile-contact > p{
+      color: rgb(110, 13, 208);
+      background-color:white;
+      margin: 2px 1px;
+      padding: 6px 4px;
+      font-size: 1.3rem;
+
+    }
+
+    #profile-contact-email{
+      display:flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      grid-column: 2;
+      grid-row: 2;
+      margin-right: auto;
+    }
+
+    input {
+      border: 0;
+      font-size: 18px;
+    }
+
+    input[type="email"] {
+      background: rgba(1,1,1,0.5);
+      width:15vw;
+      height: 35px;
+      padding: 5px;
+      color: white;
+      border-bottom: 3px solid white;
+      margin: 0px;
+    }
+
+    input[type="submit"] {
+      background: red;
+      color: white;
+      border-radius: 0px 20px 20px 20px;
+      cursor: pointer;
+      padding: 0px;
+      width:30px;
+      height:30px;
+      margin:0px;
+    }
+
+    ::placeholder{
+      color: white;
+    }
+
+    #me-professional, #me-personal{
+      padding: 3vh 10vh;
+      margin-top: 8vh;
+      border-top:5px solid white;
+      color: black;
+      position: relative;
+      display: flex;
+      flex-flow:row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-headline{
+      position:absolute;
+      top:-25px;
+      left:10px;
+      color:white;
+      background-color:black;
+      padding:5px;
+      font-size: 1.5rem;
+    }
+
+    .content-box{
+      text-align: left;
+      max-width: 290px;
+      margin:10px;
+      display: flex;
+      flex-flow:row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .content-box > *{
+      border-left: 3px solid black;
+      background-color:rgba(255,255,255,0.5);
+      margin:0px;
+      padding:3px 8px;
+    }
+
+    .title{
+      background-color:rgba(55,55,55,0.9);
+      color:rgba(20, 255, 218, 1);
+      font-size: 1.3rem;
+    }
+
+    a{
+      color: rgb(255, 0, 153);
+      text-decoration: none;
+    }
+
+    p{
+      margin: 4px 0px;
+    }
+
+    .neon-pink{
+      background-color: rgba(255, 0, 153, 0.8);
+    }
+    .neon-orange{
+      background-color: rgba(255, 102, 0, 0.8);
+    }
+    .neon-blue{
+      background-color: rgba(20, 255, 218, 0.8);
+    }
+    .neon-purple{
+      background-color: rgba(110, 13, 208, 0.8);
+    }
+
+  </style>
+</head>
+<body>
+
+  <section id="top">
+    <div id="profile-bio" class="neon-orange clover">
+      <p>Hello!</p>
+      <p>I'm Tom, a</p>
+      <p>London based</p>
+      <p>developer</p>
+    </div>
+    <img id="profile-pic" class="clover">
+    <div id="profile-contact" class="neon-purple clover">
+      <p>Why</p>
+      <p>not say</p>
+      <p>hello back?</p>
+    </div>
+    <div id="profile-contact-email">
+      <input type="email" placeholder="@...">
+      <input type="submit" value=">">
+    </div>
+  </section>
+
+  <section id="me-professional" class="neon-pink">
+    <p class="section-headline">My professional side...</p>
+    <div class="content-box">
+      <p class="title"><a href="http://www.generalassemb.ly">Developer</a></p>
+      <p>I'm starting out on a development career</p>
+    </div>
+    <div class="content-box">
+      <p class="title"><a href="http://www.bradford.ac.uk">Designer</a></p>
+      <p>I have a BSc in Industrial Design from Bradford University</p>
+    </div>
+    <div class="content-box">
+      <p class="title"><a href="http://www.warmaberdeen.co.uk">Business owner</a></p>
+      <p>I run my own freelance SAP consulting business</p>
+    </div>
+    <div class="content-box">
+      <p class="title"><a href="http://www.ibm.co.uk">Consultant</a></p>
+      <p>I have 10 years experience as a Management Consultant working for IBM</p>
+    </div>
+  </section>
+
+
+  <section id="me-personal" class="neon-blue">
+    <p class="section-headline">My personal side....</p>
+    <div class="content-box">
+      <p class="title">Keen cook</p>
+      <p>I love experimenting in the kitchen. Unfortunately my boyfriend isnt always that keen on the results</p>
+    </div>
+    <div class="content-box">
+      <p class="title">Cyclist</p>
+      <p>I use London's Boris Bikes wherever I can to get around, despite the traffic in London!</p>
+    </div>
+    <div class="content-box">
+      <p class="title">Northerner</p>
+      <p>Born and bred in Bradford. I somehow lost my accent and I'm not happy about it</p>
+    </div>
+    <div class="content-box">
+      <p class="title">Treats plants like pets</p>
+      <p>My flat looks like a jungle. Somehow I havent killed any of them yet</p>
+    </div>
+  </section>
+
+</body>
