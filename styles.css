@@ -13,13 +13,32 @@ a, a:visited{
     color: black;
 }
 
+.menu-burger{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.burger-line{
+  width:25px;
+  height:3px;
+  background-color: black;
+  margin: 0px 0px 5px 0px;
+}
+
+.burger-white > .burger-line{
+  background-color: white;
+}
+
 #header-band{
     position: absolute;
     width: 100%;
     padding: 8px;
     font-size: 1rem;
     top:0px;
-    z-index: 2;
+    z-index: 3;
     background-color: rgba(255,255,255,0.5);
 }
 #header-band.scrolled{
@@ -33,7 +52,7 @@ a, a:visited{
 
 section{
   position: relative;
-  padding: 10vh 10vw 10vh 10vw;
+  padding: 10vh 10vw;
   min-height: 200px;
   color: white;
   background-color: grey;
@@ -56,14 +75,18 @@ section{
   flex-direction: row;
   flex-wrap: wrap;
   min-height: 40vh;
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
 }
 
 .headline{
   color: #000000;
   padding: 10px;
   margin: 10px;
+}
+.section-title{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #section-three{
@@ -82,27 +105,19 @@ section{
 
 #section-footer{
   background-color: #333333;
-  max-height: 200px;
+  padding: 5vh 10vw;
 }
 
 .project-title{
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  margin-top: 3vh;
+  padding: 1vh 1vw;
+  border-left: 2px solid rgba(20, 255, 218, 0.6);
+  background-color: rgba(200, 200, 200, 0.3);
 }
-
-.menu-burger{
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
-  z-index: 3;
-}
-
-.burger-line{
-  width:25px;
-  height:3px;
-  background-color: black;
-  margin: 0px 0px 5px 0px;
+.project-description{
+  border-left: 2px solid rgba(20, 255, 218, 0.6);
+  padding: 1vh 1vw;
+  background-color: rgba(20, 255, 218, 0.4);
 }
 
 #main-menu{
@@ -117,7 +132,7 @@ section{
   top:0px;
   background-color: rgba(2,2,2, 0.7);
   padding: 50px 0px 50px 0px;
-  z-index: 2;
+  z-index: 3;
   text-align: right;
 }
 
@@ -137,17 +152,16 @@ section{
   font-size: 2.5rem;
 }
 
-.decoration-container{
-  border-width: 0px;
-  position: relative;
-}
-
 .decoration{
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.7;
   top: 0px;
   border: 0px solid black;
   transform:skewX(-20deg);
+}
+
+section > :not(.decoration) {
+  z-index: 2;
 }
 
 .odd{
@@ -171,4 +185,16 @@ section{
 }
 .neon-orange{
   background-color: rgba(255, 102, 0, 0.6);
+}
+.grey-light{
+  background-color: rgba(200, 200, 200, 0.6);
+}
+.grey-mid{
+  background-color: rgba(150, 150, 150, 0.6);
+}
+.grey-dark{
+  background-color: rgba(100, 100, 100, 0.6);
+}
+.grey-extradark{
+  background-color: rgba(10, 10, 10, 0.6);
 }
