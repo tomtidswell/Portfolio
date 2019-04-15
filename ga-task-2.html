@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <link href="/normalize.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Satisfy" rel="stylesheet">
   <style>
     body{
       background-color: rgb(0,0,0);
@@ -29,10 +30,21 @@
       position: relative;
       left:40px;
     }
+
+    #blog-gold:hover{
+      transform: rotateY(180deg);
+      color: gold;
+      transition: transform, color, 1s;
+    }
+
+    #blog-gold{
+      transition: transform, color, 4s;
+      color: white;
+    }
+
     h1 {
       font-size: 80px;
-      font-family: "Bookman Old Style", serif;
-      letter-spacing: -7px;
+      font-family: 'Abril Fatface', cursive;
       font-weight: normal;
       line-height: 90%;
     }
@@ -40,7 +52,7 @@
       padding: 10px;
       margin-top: 30px;
       background: rgba(0,0,0,0.5);
-      font-family: "Bookman Old Style", serif;
+      font-family: 'Satisfy', cursive;
       letter-spacing: -2px;
       font-size: 25px;
     }
@@ -64,11 +76,13 @@
       color: white;
       width: 250px;
       height: 250px;
+      transition: transform 4s;
     }
     article {
       max-width: 500px;
       padding: 20px;
       margin: 10px auto;
+
     }
 
     article > p{
@@ -134,7 +148,7 @@
     <div id="pic-and-title">
       <img src="https://s3.amazonaws.com/f6s-public/profiles/1398823_original.jpg">
       <div id="title">
-        <h1>tom's<br>blog</h1>
+        <h1>tom's<br><div id="blog-gold">blog</div></h1>
       </div>
     </div>
     <ul>
