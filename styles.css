@@ -79,14 +79,31 @@ section{
   padding-bottom: 20vh;
 }
 
-.headline{
+#section-one > div{
   color: #000000;
   padding: 10px;
   margin: 10px;
+  width:400px;
 }
-.section-title{
+
+#section-one p{
+  padding: 10px;
+  font-size: 1.5rem;
+}
+#section-one h3{
+  padding: 0 10px;
+}
+
+h2{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+h3{
+  font-size: 2rem;
+  display: inline;
+  color:black;
+  padding:0px;
 }
 
 #section-three{
@@ -168,19 +185,19 @@ section > :not(.decoration) {
   transform:skewX(20deg);
 }
 
-.neon-pink{
+.neon-pink, .pink-container h3, .pink-container p, .pink-container small{
   background-color: rgba(255, 0, 153, 0.6);
 }
-.neon-yellow{
+.neon-yellow, .yellow-container h3, .yellow-container p, .yellow-container small{
   background-color: rgba(243, 243, 21, 0.6);
 }
 .neon-blue{
   background-color: rgba(20, 255, 218, 0.6);
 }
-.neon-green{
+.neon-green, .green-container h3, .green-container p, .green-container small{
   background-color: rgba(131, 245, 44, 0.6);
 }
-.neon-purple{
+.neon-purple, .purple-container h3, .purple-container p, .purple-container small{
   background-color: rgba(110, 13, 208, 0.6);
 }
 .neon-orange{
