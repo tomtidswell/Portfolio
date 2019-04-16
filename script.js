@@ -59,7 +59,7 @@ function retriggerHeight(){
 function setHeight(decoration){
   //set the decoration height to the parent section's height
   var parentSection = decoration.parentElement;
-  decoration.style.height = (parentSection.offsetHeight) + "px";
+  decoration.style.height = (parentSection.offsetHeight-10) + "px";
 }
 
 
