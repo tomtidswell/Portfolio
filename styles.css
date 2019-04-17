@@ -184,6 +184,7 @@ small{
 }
 #contacts-digital{
   width:100%;
+  position: relative;
 }
 #contacts-social{
   font-size: 1.8rem;
