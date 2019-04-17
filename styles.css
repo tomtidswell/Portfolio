@@ -56,13 +56,8 @@ a, a:visited{
 section{
   position: relative;
   padding: 5vh 5vw 10vh 5vw;
-  min-height: 200px;
   color: white;
   background-color: grey;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Vertical center alignment */
-  justify-content: flex-start;
   border-top: 10px solid #333333;
   overflow: hidden;
 }
@@ -72,10 +67,10 @@ section{
   background-size: cover;
   background-blend-mode:screen ;
   background-position: bottom;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow:  row wrap;
   min-height: 40vh;
   padding: 20vh 10vw;
   border:0;
@@ -95,20 +90,23 @@ section{
 h2{
   padding:10px 8px;
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 5;
   color: black;
+  display: inline-block;
 }
 
 h3{
+  position: relative;
   font-size: 1.6rem;
   margin: 0;
-  display: inline-block;
   color:black;
   padding:5px 8px;
+  display: inline-block;
 }
 
 p{
+  position: relative;
   font-size: 1.2rem;
   padding:5px 8px;
   margin: 0;
@@ -116,6 +114,7 @@ p{
 }
 
 small{
+  position: relative;
   padding:5px 8px;
   margin: 0;
   display: inline-block;
@@ -127,6 +126,18 @@ small{
   background-size:cover;
   background-blend-mode:color-dodge;
   color: #000000;
+}
+#section-three-content{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width:100%;
+}
+#section-three-content > div{
+  margin: 10px 30px 10px 0;
+  max-width:500px;
+  text-align: left;
 }
 #section-three h3, #section-three p, #section-three small{
   margin-top: 3vh;
@@ -153,7 +164,6 @@ small{
   color: #000000;
   margin: 10px 30px 10px 0;
   max-width:350px;
-  text-align: left;
 }
 #section-four h3, #section-four p, #section-four small {
   border-left: 3px solid black;
@@ -164,6 +174,7 @@ small{
 #section-footer{
   background-color: #333333;
   padding: 5vh 5vw 20px 5vw;
+  display: block;
 }
 #section-footer *{
   color: #dddddd;
@@ -234,11 +245,13 @@ small{
   top: 0px;
   border: 0px solid black;
   transform:skewX(-20deg);
+  z-index: 1;
 }
 
-section > :not(.decoration):not(h2){
+section :not(.decoration){
   z-index: 2;
 }
+
 
 .odd{
   transform:skewX(20deg);
