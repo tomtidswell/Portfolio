@@ -127,18 +127,7 @@ small{
   background-blend-mode:color-dodge;
   color: #000000;
 }
-#section-three-content{
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width:100%;
-}
-#section-three-content > div{
-  margin: 10px 30px 10px 0;
-  max-width:500px;
-  text-align: left;
-}
+
 #section-three h3, #section-three p, #section-three small{
   margin-top: 3vh;
   border-left: 3px solid rgba(20, 255, 218, 0.6);
