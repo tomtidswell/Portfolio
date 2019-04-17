@@ -34,7 +34,7 @@ a, a:visited{
 }
 
 #header-band{
-    position: absolute;
+    position: fixed;
     width: 100%;
     padding: 8px;
     font-size: 1rem;
@@ -64,6 +64,7 @@ section{
   align-items: flex-start; /* Vertical center alignment */
   justify-content: flex-start;
   border-top: 10px solid #333333;
+  overflow: hidden;
 }
 
 #section-one{
