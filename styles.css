@@ -265,6 +265,27 @@ small{
   margin-top: 76px;
 }
 
+
+@media screen and (max-width: 600px) {
+  #section-one > div{
+
+  }
+
+  h3{
+
+  }
+
+  p{
+
+  }
+
+  small{
+
+  }
+}
+
+
+
 .decoration{
   position: absolute;
   opacity: 0.7;
@@ -277,7 +298,6 @@ small{
 section :not(.decoration){
   z-index: 2;
 }
-
 
 .odd{
   transform:skewX(20deg);
