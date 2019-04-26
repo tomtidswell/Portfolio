@@ -112,23 +112,34 @@ section{
   background-size: cover;
   background-blend-mode:screen;
   background-position: bottom;
+  padding: 15vh 5vw 10vh 5vw;
+  border:0;
+}
+#section-one-content{
   display: flex;
   align-content: stretch;
   justify-content: space-around;
   flex-flow:  row wrap;
   min-height: 65vh;
-  padding: 15vh 5vw 15vh 5vw;
-  border:0;
+}
+.more{
+  width:50px;
+  height:50px;
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+  transform: rotate(-45deg);
+  margin: 0 auto;
+  display: block;
 }
 
-#section-one > div{
+#section-one-content > div{
   padding: 5px;
   max-width:330px;
   text-align: left;
   margin: auto;
 }
 
-#section-one h3, #section-one p, #section-one small {
+#section-one-content h3, #section-one-content p, #section-one-content small {
   border-left: 3px solid black;
 }
 
