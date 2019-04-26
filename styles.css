@@ -153,7 +153,7 @@ section{
 
 /* Project section */
 #section-three{
-  background-image: linear-gradient(to right, black 10%, rgb(20, 255, 218) 70%, white 100%), url(img/viaduct-crop.png);
+  background-image: linear-gradient(to right, black 10%, rgb(20, 255, 218) 70%, white 100%), url(img/viaduct-crop-comp.jpg);
   background-size:cover;
   background-blend-mode:color-dodge;
 }
