@@ -1,15 +1,63 @@
 *{
-  margin: 0px;
-  font-family: segoe UI, sans-serif;
+  margin: 0;
   text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body{
-    overflow-x: hidden;
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: -0.5px;
 }
 
 a{
     color: black;
+}
+
+/* Main menu header */
+h1{
+  z-index: 5;
+  display: inline-block;
+  font-size: 2rem;
+  padding-left: 40px;
+  padding-top: 2px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+h2{
+  position: relative;
+  font-size: 1.8rem;
+  padding:5px 8px;
+}
+
+h3{
+  position: relative;
+  font-size: 1.6rem;
+  padding:5px 10px 5px 8px;
+  display: inline-block;
+  font-family: 'Permanent Marker', cursive;
+}
+
+p{
+  position: relative;
+  font-size: 1.2rem;
+  padding:2px 8px;
+  display: inline-block;
+}
+
+small{
+  position: relative;
+  padding:4px 8px;
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: normal;
+}
+
+h2 span{
+  position:absolute; /*allows an offset for targeting the links */
+  top:-85px;
 }
 
 .menu-burger{
@@ -17,14 +65,14 @@ a{
   z-index: 4;
   cursor: pointer;
   float: right;
-  margin: 10px 10px;
+  margin: 15px 10px 0 0;
 }
 
 .menu-burger div{
   width:25px;
   height:3px;
   background-color: black;
-  margin: 0px 0px 5px 0px;
+  margin-bottom: 5px;
   transition: color, 3s;
 }
 
@@ -54,7 +102,6 @@ a{
 section{
   position: relative;
   padding: 5vh 5vw 10vh 5vw;
-  color: white;
   background-color: grey;
   border-top: 10px solid #333333;
   overflow: hidden;
@@ -69,13 +116,12 @@ section{
   align-content: stretch;
   justify-content: space-around;
   flex-flow:  row wrap;
-  min-height: 60vh;
-  padding: 15vh 5vw 10vh 5vw;
+  min-height: 65vh;
+  padding: 15vh 5vw 15vh 5vw;
   border:0;
 }
 
 #section-one > div{
-  color: #000000;
   padding: 5px;
   max-width:330px;
   text-align: left;
@@ -86,82 +132,42 @@ section{
   border-left: 3px solid black;
 }
 
-/* Main menu header */
-h1{
-  z-index: 5;
-  color: black;
-  display: inline-block;
-  font-size: 1.8rem;
-  margin: 2px;
+
+/* About me section */
+#section-two h2, #section-two p{
+  color: white;
+  padding-left: 0;
 }
 
-h2{
-  font-size: 1.8rem;
-}
-
-h3{
-  position: relative;
-  font-size: 1.4rem;
-  margin: 0;
-  color:black;
-  padding:5px 8px;
-  display: inline-block;
-}
-
-p{
-  position: relative;
-  font-size: 1.1rem;
-  padding:5px 8px;
-  margin: 0;
-  display: inline-block;
-}
-
-small{
-  position: relative;
-  padding:5px 8px;
-  margin: 0;
-  display: inline-block;
-  font-size: 1rem;
-}
 
 /* Project section */
 #section-three{
   background-image: linear-gradient(to right, black 10%, rgb(20, 255, 218) 70%, white 100%), url(img/viaduct-crop.png);
   background-size:cover;
   background-blend-mode:color-dodge;
-  color: #000000;
 }
-
-#section-three-content > div{
-  color: #000000;
-  margin: 10px 30px 10px 0;
-  border-left: 3px solid rgba(255, 102, 0, 0.9);
+#section-three-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 1em;
 }
-#section-three-content > div > *{
-  background-color: rgba(255, 102, 0, 0.5);
+#section-three-content h3, #section-three-content p, #section-three-content small{
+  border-left: 3px solid rgba(255, 0, 153, 0.9);
 }
 #section-three h3{
-  background-color: rgba(200, 200, 200, 0.5);
+  background-color: rgba(200, 200, 200, 0.5); /* H3 colour override */
+  font-family: 'Quicksand', sans-serif;
 }
 
 
 /* Personal section */
 #section-four-content{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width:100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 1em;
 }
-#section-four-content > div{
-  color: #000000;
-  margin: 10px 30px 10px 0;
-  max-width:350px;
+#section-four-content h3, #section-four-content p, #section-four-content small{
   border-left: 3px solid black;
-}
-#section-four-content > div > *{
-  background-color: rgba(200, 200, 200, 0.3);
 }
 
 /* Footer --------------------------------------------------- */
@@ -217,7 +223,7 @@ footer i{
   visibility: visible;
   transition: all, 1s;
 }
-#main-menu ul{
+#main-menu ul, #main-menu h2{
   padding:0;
 }
 
@@ -271,6 +277,8 @@ footer i{
 }
 
 
+
+
 @media screen and (max-width: 600px) {
   #main-menu{
     width: 90%;
@@ -317,7 +325,7 @@ section :not(.decoration), footer :not(.decoration){
 .neon-orange{
   background-color: rgba(255, 102, 0, 0.6);
 }
-.grey-light{
+.grey-light, .grey-light-container h3, .grey-light-container p, .grey-light-container small{
   background-color: rgba(200, 200, 200, 0.6);
 }
 .grey-mid{

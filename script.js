@@ -1,12 +1,19 @@
-
+//fetch the DOM items
 var burgerMenu = document.querySelector( " .menu-burger " );
 var mainMenu = document.querySelector("#main-menu");
-var headerBand = document.getElementById("header-band")
+var headerBand = document.getElementById("header-band");
+var mainMenuLinks = document.querySelectorAll("#main-menu a");
+
 
 //Set events
 burgerMenu.addEventListener("click", toggleMenu);
 window.addEventListener('resize', retriggerHeight);
 document.addEventListener('scroll', transHeading);
+// This one hides the menu after a link is clicked
+mainMenuLinks.forEach(function(menuLink) {
+  menuLink.addEventListener("click", toggleMenu);
+});
+
 
 //for the burger menu to show and hide the contact panel
 function toggleMenu() {
@@ -34,7 +41,6 @@ function randomiseDecoration(decoration){
     decoration.classList.add(neonClasses[randomColour]);
   }
 
-
   //shift the horizontal placement
   var randomOffset = 0;
   randomOffset = Math.floor(Math.random() * 100);
@@ -45,7 +51,7 @@ function randomiseDecoration(decoration){
   randomWidth = (Math.floor(Math.random() * 20) + 20);
   decoration.style.width = randomWidth + 'vw';
 
-  //set the height
+  //finally set the height
   setHeight(decoration);
 }
 
@@ -72,10 +78,10 @@ function transHeading() {
   }
 }
 
-//PAGE LOAD
-
-// Update scroll position for first time
-transHeading();
-
-// run the randomisation for the items on page load
-decorations.forEach(randomiseDecoration);
+//On DOM load
+document.addEventListener("DOMContentLoaded", function(){
+  // run the randomisation for the items on page load
+  decorations.forEach(randomiseDecoration);
+  // Update scroll position for first time
+  transHeading();
+});
