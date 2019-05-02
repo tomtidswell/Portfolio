@@ -160,7 +160,7 @@ section{
 }
 #section-three-content{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1em;
 }
 #section-three-content h3, #section-three-content p, #section-three-content small{
@@ -175,7 +175,7 @@ section{
 /* Personal section */
 #section-four-content{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1em;
 }
 #section-four-content h3, #section-four-content p, #section-four-content small{
