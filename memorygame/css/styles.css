@@ -34,11 +34,11 @@ nav{
 }
 
 main{
-  width: 850px;
+  max-width: 850px;
   margin: 35px auto;
 }
 section > *{
-  width: 850px;
+  max-width: 850px;
   margin: 10px auto;
 }
 
@@ -104,7 +104,7 @@ p {
 }
 
 img{
-  margin: 10px 8px 0 8px;
+  margin: 0 auto;
 }
 
 button{
@@ -118,6 +118,11 @@ button{
   color: #0d2c40;
   background-color: #F15B31;
   margin-left: 100px;
+}
+#game-board{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  grid-gap: 0.5em;
 }
 
 #game-message{
