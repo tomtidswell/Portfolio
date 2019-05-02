@@ -85,7 +85,7 @@ h2 span{
     position: fixed;
     width: 100%;
     font-size: 1.3rem;
-    top:0px;
+    top: 0px;
     z-index: 4;
     text-align: center;
     background-color: rgba(255,255,255,0.7);
@@ -101,10 +101,11 @@ h2 span{
 
 section{
   position: relative;
-  padding: 5vh 5vw 10vh 5vw;
+  padding: 10vh 5vw 10vh 5vw;
   background-color: grey;
   border-top: 10px solid #333333;
   overflow: hidden;
+  height: auto;
 }
 
 #section-one{
@@ -159,7 +160,7 @@ section{
 }
 #section-three-content{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1em;
 }
 #section-three-content h3, #section-three-content p, #section-three-content small{
@@ -174,7 +175,7 @@ section{
 /* Personal section */
 #section-four-content{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1em;
 }
 #section-four-content h3, #section-four-content p, #section-four-content small{
@@ -224,7 +225,7 @@ footer i{
   width:300px;
   padding: 0 0 10px 20px;
   transition: all, 2s;
-  visibility: collapse;
+  visibility:  hidden;
   background-color: rgba(90, 90, 90, 0.95);
   z-index: 3;
   height:100%;

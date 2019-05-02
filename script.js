@@ -65,7 +65,7 @@ function retriggerHeight(){
 function setHeight(decoration){
   //set the decoration height to the parent section's height
   var parentSection = decoration.parentElement;
-  decoration.style.height = (parentSection.offsetHeight-10) + "px";
+  decoration.style.height = (parentSection.offsetHeight) + "px";
 }
 
 
@@ -80,8 +80,13 @@ function transHeading() {
 
 //On DOM load
 document.addEventListener("DOMContentLoaded", function(){
-  // run the randomisation for the items on page load
-  decorations.forEach(randomiseDecoration);
   // Update scroll position for first time
   transHeading();
 });
+
+//on font load
+document.fonts.onloadingdone = function () {
+   // there was an issue with document sizing due to a delay with font rendering, 
+   // so I included this check for external fonts before rendering the decoration randomisation
+   decorations.forEach(randomiseDecoration);
+};
