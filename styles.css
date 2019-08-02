@@ -1,6 +1,7 @@
 *{
   margin: 0;
   text-decoration: none;
+  box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
@@ -27,9 +28,10 @@ h1{
 }
 
 h2{
-  position: relative;
+  top: 60px;
+  position: absolute;
   font-size: 1.8rem;
-  padding:5px 8px;
+  font-weight: 300;
 }
 
 h3{
@@ -43,7 +45,7 @@ h3{
 p{
   position: relative;
   font-size: 1.2rem;
-  padding:2px 8px;
+  padding: 2px 8px;
   display: inline-block;
 }
 
@@ -101,20 +103,25 @@ h2 span{
 
 section{
   position: relative;
-  padding: 10vh 5vw 10vh 5vw;
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 140px 5vw 50px 5vw;
   border-top: 10px solid #333333;
   overflow: hidden;
   height: auto;
+  min-height: 100vh;
 }
 
 #section-one{
-  background-image: linear-gradient(to right, #ffffff 0%, rgb(110, 13, 208) 20%, rgb(255, 0, 153) 50%, rgb(255, 102, 0) 80%, #ffffff 100%), url(img/map-city-comp.jpg);
+  background-image: linear-gradient(to right, #ffffff 0%, rgba(110, 13, 208, 0.9) 20%, rgba(255, 0, 153, 0.9) 50%, rgba(255, 102, 0, 0.9) 80%, #ffffff 100%), url(img/map.jpg);
   background-size: cover;
   background-blend-mode:screen;
   background-position: bottom;
   padding: 15vh 5vw 10vh 5vw;
   border:0;
+  min-height: 100vh;
 }
 #section-one-content{
   display: flex;
@@ -146,15 +153,20 @@ section{
 
 
 /* About me section */
-#section-two h2, #section-two p{
-  color: white;
-  padding-left: 0;
+#section-two{
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+} 
+
+#section-two p{
+  margin: 10px;;
+  width: 200px;
 }
 
 
 /* Project section */
 #section-three{
-  background-image: linear-gradient(to right, black 10%, rgb(20, 255, 218) 70%, white 100%), url(img/viaduct-crop-comp.jpg);
   background-size:cover;
   background-blend-mode:color-dodge;
 }
@@ -169,6 +181,10 @@ section{
 #section-three h3{
   background-color: rgba(200, 200, 200, 0.5); /* H3 colour override */
   font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 1em;
 }
 
 
@@ -186,7 +202,7 @@ section{
 footer{
   position: relative;
   background-color: #333333;
-  padding: 5vh 5vw 20px 5vw;
+  padding: 100px 5vw 20px 5vw;
   border-top: 10px solid #333333;
   overflow: hidden;
 }
@@ -304,11 +320,13 @@ footer i{
 
 .decoration{
   position: absolute;
-  opacity: 0.7;
+  opacity: 0.5;
   top: 0px;
   border: 0px solid black;
   transform:skewX(-20deg);
   z-index: 1;
+  animation-name: movement;
+  animation-iteration-count: infinite;
 }
 
 section :not(.decoration), footer :not(.decoration){
@@ -316,36 +334,46 @@ section :not(.decoration), footer :not(.decoration){
 }
 
 .odd{
-  transform:skewX(20deg);
+  animation-name: odd-movement;
 }
 
 .neon-pink, .pink-container h3, .pink-container p, .pink-container small{
-  background-color: rgba(255, 0, 153, 0.6);
+  background-color: rgba(255, 0, 153, 0.7);
 }
 .neon-yellow, .yellow-container h3, .yellow-container p, .yellow-container small{
-  background-color: rgba(243, 243, 21, 0.6);
+  background-color: rgba(243, 243, 21, 0.7);
 }
 .neon-blue{
-  background-color: rgba(20, 255, 218, 0.6);
+  background-color: rgba(20, 255, 218, 0.7);
 }
 .neon-green, .green-container h3, .green-container p, .green-container small{
-  background-color: rgba(131, 245, 44, 0.6);
+  background-color: rgba(131, 245, 44, 0.7);
 }
 .neon-purple, .purple-container h3, .purple-container p, .purple-container small{
-  background-color: rgba(110, 13, 208, 0.6);
+  background-color: rgba(110, 13, 208, 0.7);
 }
 .neon-orange{
-  background-color: rgba(255, 102, 0, 0.6);
+  background-color: rgba(255, 102, 0, 0.7);
 }
 .grey-light, .grey-light-container h3, .grey-light-container p, .grey-light-container small{
-  background-color: rgba(200, 200, 200, 0.6);
+  background-color: rgba(200, 200, 200, 0.7);
 }
 .grey-mid{
-  background-color: rgba(150, 150, 150, 0.6);
+  background-color: rgba(150, 150, 150, 0.7);
 }
 .grey-dark{
-  background-color: rgba(100, 100, 100, 0.6);
+  background-color: rgba(100, 100, 100, 0.7);
 }
 .grey-extradark{
-  background-color: rgba(10, 10, 10, 0.6);
+  background-color: rgba(10, 10, 10, 0.7);
+}
+
+
+@keyframes movement {
+  from {transform: translateX(-300px) skewX(-20deg);}
+  to {transform: translateX(300px) skewX(-20deg);}
+}
+@keyframes odd-movement {
+  from {transform: translateX(-300px) skewX(20deg);}
+  to {transform: translateX(300px) skewX(20deg);}
 }
