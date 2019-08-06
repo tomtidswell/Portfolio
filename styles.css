@@ -46,7 +46,6 @@ p{
   position: relative;
   font-size: 1.2rem;
   padding: 2px 8px;
-  display: inline-block;
 }
 
 small{
@@ -107,7 +106,7 @@ section{
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding: 140px 5vw 50px 5vw;
+  padding: 100px 5vw 50px 5vw;
   border-top: 10px solid #333333;
   overflow: hidden;
   height: auto;
@@ -156,36 +155,72 @@ section{
 #section-two{
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 } 
 
-#section-two p{
-  margin: 10px;;
-  width: 200px;
+#section-two span{
+  column-width: 24ch;
+  column-gap: 40px;
+  text-align: justify;
+  column-fill: balance;
 }
+
+#section-two p{
+  padding-bottom: 15px;
+}
+
 
 
 /* Project section */
-#section-three{
-  background-size:cover;
-  background-blend-mode:color-dodge;
+#section-five{
+  display: flex;
+  min-height: 80vh;
+  flex-direction: row;
 }
-#section-three-content{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 1em;
+#section-five-links{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column; 
+  min-width: 210px;
 }
-#section-three-content h3, #section-three-content p, #section-three-content small{
-  border-left: 3px solid rgba(255, 0, 153, 0.9);
-}
-#section-three h3{
+#section-five-links a{
   background-color: rgba(200, 200, 200, 0.5); /* H3 colour override */
-  font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 2px;
   font-size: 1em;
+  padding: 8px;
+  margin: 2px 2px;
+  cursor: pointer;
 }
+#section-five-links a.active{
+  border-left: 3px solid rgba(255, 0, 153, 0.9);
+}
+
+#section-five-content{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column; 
+  max-width: 400px;
+}
+#section-five-content p{
+  border-left: 3px solid rgba(255, 0, 153, 0.9);
+  background-color: rgba(200, 200, 200, 0.5);
+  padding: 5px 8px;
+}
+#section-five-content p:first-child{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#section-five-content p:not(:first-child){
+  background-color: rgba(255, 0, 153, 0.7);
+}
+#section-five-content p:last-child{
+  font-size: 1em; 
+}
+
 
 
 /* Personal section */
@@ -314,6 +349,17 @@ footer i{
   #main-menu.show{
     right: 0;
   }
+  #section-five{
+    flex-direction: column;
+  }
+  #section-five-links{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #section-five-content{
+    max-width: initial;
+  }
 }
 
 
@@ -343,7 +389,7 @@ section :not(.decoration), footer :not(.decoration){
 .neon-yellow, .yellow-container h3, .yellow-container p, .yellow-container small{
   background-color: rgba(243, 243, 21, 0.7);
 }
-.neon-blue{
+.neon-blue, .blue-container h3, .blue-container p, .blue-container small{
   background-color: rgba(20, 255, 218, 0.7);
 }
 .neon-green, .green-container h3, .green-container p, .green-container small{
