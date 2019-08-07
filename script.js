@@ -3,12 +3,15 @@
 
 const neonClasses = ['neon-pink','neon-yellow','neon-blue','neon-green','neon-purple','neon-orange']
 const greyscaleClasses = ['grey-mid','grey-light','grey-dark','grey-extradark']
-const decorations = document.querySelectorAll('.decoration')
 
+let decorations = null
+let sections = null
+let bodyEl = null
 let headerBand = null
 let portfolioLinks = null
 const portfolioLinkEl = []
 let portfolioElem = []
+
 
 
 // FUNCTIONS
@@ -33,21 +36,17 @@ function randomiseDecoration(decoration){
   decoration.style.animationDuration = `${Math.floor(Math.random() * 30) + 30}s`
   decoration.style.animationDirection = Math.random() > 0.5 ? 'alternate' : 'alternate-reverse'
 
-  //finally set the height
-  setHeight(decoration)
+
+  // add the snapping behaviour to the body and sections
+  // we need to do this thanks to some weird behaviour in chrome where it stops working after a page ajustment
+  applySnapping()
+  
 }
 
 
-// retrigger for when there is a page adjustment
-function retriggerHeight(){
-  decorations.forEach(setHeight)
-}
-
-// individual item adjustment
-function setHeight(decoration){
-  //set the decoration height to the parent section's height
-  var parentSection = decoration.parentElement
-  decoration.style.height = `${parentSection.offsetHeight}px`
+function applySnapping(){
+  bodyEl.classList.add('snap-parent')
+  sections.forEach(section => section.classList.add('snap'))
 }
 
 
@@ -110,16 +109,18 @@ function buildPortfolioLinks() {
 }
 
 
-function init(){
+function domLoaded(){
   //fetch the DOM items
   headerBand = document.getElementById('header-band')
   portfolioLinks = document.getElementById('section-five-links')
+  decorations = document.querySelectorAll('.decoration')
   portfolioElem = [...document.querySelectorAll('.portfolio-item')]
+  bodyEl = document.querySelector('body')
+  sections = [...document.querySelectorAll('section')]
   
   //Set events
   //on font load - there was an issue with document sizing due to a delay with font rendering, so I included this check for external fonts before rendering the decoration randomisation
   document.fonts.onloadingdone = ()=>decorations.forEach(randomiseDecoration)
-  window.addEventListener('resize', retriggerHeight)
   document.addEventListener('scroll', transHeading)
 
   // Update scroll position for first time
@@ -130,7 +131,7 @@ function init(){
 }
 
 //On DOM load
-document.addEventListener('DOMContentLoaded', init)
+document.addEventListener('DOMContentLoaded', domLoaded)
 
 
 
