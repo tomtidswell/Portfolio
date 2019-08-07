@@ -5,10 +5,7 @@ const neonClasses = ['neon-pink','neon-yellow','neon-blue','neon-green','neon-pu
 const greyscaleClasses = ['grey-mid','grey-light','grey-dark','grey-extradark']
 const decorations = document.querySelectorAll('.decoration')
 
-let burgerMenu = null
-let mainMenu = null
 let headerBand = null
-let mainMenuLinks = null
 let portfolioLinks = null
 const portfolioLinkEl = []
 let portfolioElem = []
@@ -63,12 +60,6 @@ function transHeading() {
   }
 }
 
-//for the burger menu to show and hide the contact panel
-function toggleMenu() {
-  mainMenu.classList.toggle('show')
-  burgerMenu.classList.toggle('burger-white')
-}
-
 function populatePortfolio(portfolioId){
   portfolioElem.forEach(el => {
     const thisElClass = [...el.classList].filter(item => item !== 'portfolio-item').toString()
@@ -88,14 +79,18 @@ function populatePortfolio(portfolioId){
       case 'portfolio-description':
         el.innerHTML = portfolioContent[portfolioId].description
         break
+      case 'portfolio-tech':
+        el.innerHTML = portfolioContent[portfolioId].tech
+        break
+      case 'portfolio-image':
+        el.src = portfolioContent[portfolioId].screen
+        break
     }
   })
   setActivePortfolioLink(portfolioId)
 }
 
 function setActivePortfolioLink(id) {
-  console.log(portfolioLinkEl, id)
-  
   portfolioLinkEl.forEach((item, index) => {
     item.classList.remove('active')
     if (index === id) item.classList.add('active')
@@ -117,28 +112,16 @@ function buildPortfolioLinks() {
 
 function init(){
   //fetch the DOM items
-  burgerMenu = document.querySelector('.menu-burger')
-  mainMenu = document.querySelector('#main-menu')
   headerBand = document.getElementById('header-band')
-  mainMenuLinks = document.querySelectorAll('#main-menu a')
   portfolioLinks = document.getElementById('section-five-links')
   portfolioElem = [...document.querySelectorAll('.portfolio-item')]
-
-  //on font load
-  document.fonts.onloadingdone = function () {
-    // there was an issue with document sizing due to a delay with font rendering,
-    // so I included this check for external fonts before rendering the decoration randomisation
-    decorations.forEach(randomiseDecoration)
-  }
-
+  
   //Set events
-  burgerMenu.addEventListener('click', toggleMenu)
+  //on font load - there was an issue with document sizing due to a delay with font rendering, so I included this check for external fonts before rendering the decoration randomisation
+  document.fonts.onloadingdone = ()=>decorations.forEach(randomiseDecoration)
   window.addEventListener('resize', retriggerHeight)
   document.addEventListener('scroll', transHeading)
-  // This one hides the menu after a link is clicked
-  mainMenuLinks.forEach(function (menuLink) {
-    menuLink.addEventListener('click', toggleMenu)
-  })
+
   // Update scroll position for first time
   transHeading()
   // set up the portfolio section
@@ -156,49 +139,63 @@ const portfolioContent = [
     name: 'picoBank',
     title: 'A modern bank app with analytics.',
     description: 'u nocturna ut se exhibere mutuatur is. Ima instar ero tribuo infixa vim sae. Missae obvium nullas p.',
+    tech: 'React, Flask, Python, PostgreSQL',
     siteLink: 'https://picobank-app.herokuapp.com/',
-    githubLink: 'https://tomtidswell.github.io/'
+    githubLink: 'https://tomtidswell.github.io/',
+    screen: './img/picobank.png'
   },
   {
     name: 'Pacman',
     title: 'The classic arcade game built in JavaScript.',
     description: 'Dem his quam ipsi boni. Dubium altera cau duo nihilo summam lumini nia humano. Se jactantur id distinguo im videantur ut. Scriptumrmulta ac.',
+    tech: 'Javascript',
     siteLink: 'https://tomtidswell.github.io/sei-pacman/',
-    githubLink: ''
+    githubLink: '',
+    screen: './img/pacman.png'
   },
   {
     name: 'Buddle!',
     title: 'A social event finding app.',
     description: 'Ego regi fuit dici imo ego esto mea. Ubi sum attigi qui sponte sacras. Detrahere veritates meo hic tantundem explorant tangantur ita faciendam.',
+    tech: 'React, Node.js, MongoDB, Express',
     siteLink: 'https://buddle-sst.herokuapp.com/',
-    githubLink: ''
+    githubLink: '',
+    screen: ''
   },
   {
     name: 'JavaDrip',
     title: 'Start your morning the right way, every day.',
     description: 'Du nocturna ut se exhibere mutuatur is. Ima instar ero tribuo infixa vim sae. Missae obvium nullas pileos aut ibidem pro fateri agi hic.',
+    tech: 'React, Node.js, MongoDB, Express',
     siteLink: 'https://tomtidswell.github.io/sei-javadrip/',
-    githubLink: ''
+    githubLink: '',
+    screen: ''
   },
   {
     name: 'Memory Game',
     title: 'Interactive card game.',
     description: 'This game was originally part of my General Assembly coursework. I enhanced the functionality: its now randomised and will track your score.'  ,
+    tech: 'Javascript',
     siteLink: 'memorygame/index.html',
-    githubLink: ''
+    githubLink: '',
+    screen: ''
   },
   {
     name: 'Personal website',
     title: 'My portfolio v1.',
     description: 'The site began life as a tutorial then quickly transformed into my new portfolio. It demonstrates a responsive layout which switches based on screen width.',
+    tech: 'Javascript',
     siteLink: 'ga-task-1.html',
-    githubLink: ''
+    githubLink: '',
+    screen: ''
   },
   {
     name: 'Personal Blog',
     title: 'A blog page. Experimentation with transitions.',
     description: 'It includes some experimentation with transitions and jQuery, and started life as a tutorial without those elements.',
+    tech: 'Javascript',
     siteLink: 'ga-task-2.html',
-    githubLink: ''
+    githubLink: '',
+    screen: ''
   }
 ]
