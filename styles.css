@@ -322,6 +322,18 @@ footer a, footer h2, footer{
   #main-menu.show{
     right: 0;
   }
+  #section-two{
+    flex-direction: column;
+  }
+  #section-two span.bio{
+    width: inherit;
+  }
+
+  #section-three .skill-wrapper{
+    flex-direction: column;
+    align-items: center;
+
+  }
   #section-five{
     flex-direction: column;
   }
@@ -329,9 +341,13 @@ footer a, footer h2, footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 20px;
   }
   #section-five-content{
     max-width: initial;
+  }
+  #section-four-content{
+    grid-template-columns: 1fr;
   }
 }
 
