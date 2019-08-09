@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Quicksand:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800|Roboto+Slab:300,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
@@ -35,7 +36,7 @@
 
     <!-- <main> -->
       <section id="section-one">
-        <div class="title">Tom Tidswell</div>
+        <h1 class="title">Tom Tidswell</h1>
         <div class="subtitle">Full Stack Software Engineer</div>
         <a href="#my-story" class="more"></a>
       </section>
@@ -43,18 +44,18 @@
       <section id="section-two">
         <h2><span id="my-story"></span>My professional side</h2>
         <span class="highlights">
-          <div class="pink-container container">
-            <h3><i class="fas fa-laptop-code"></i> Developer</h3>
+          <div class="pink-card card">
+            <p class="card-title"><i class="fas fa-laptop-code"></i> Developer</p>
             <p>Starting my development career.</p>
             <small>I attended a Software Engineering bootcamp to kickstart my career as a developer</small>
           </div>
-          <div class="blue-container container">
-            <h3><i class="fas fa-pencil-ruler"></i> Designer</h3>
+          <div class="blue-card card">
+            <p class="card-title"><i class="fas fa-pencil-ruler"></i> Designer</p>
             <p>I hold a degree in Industrial Design.</p>
             <small>My studies touched on various diciplines within engineering design, from aerodynamics to computer modelling</small>
           </div>
-          <div class="orange-container container">
-            <h3><i class="fas fa-user-tie"></i> Consultant</h3>
+          <div class="orange-card card">
+            <p class="card-title"><i class="fas fa-user-tie"></i> Consultant</p>
             <p>10 years as a Software Analyst.</p>
             <small>I've worked for two large consultancy companies: IBM and Baringa.</small>
           </div>
@@ -82,24 +83,26 @@
       <section id="section-three">
         <h2><span id="my-skills"></span>My skills</h2>
         <div class="skill-wrapper">
-          <div class="container container-left grey-light-container">
-            <h3>Technical skills <i class="fas fa-code"></i></h3><br>
+          <div class="card card-left grey-light-card">
+            <p class="card-title">Technical skills <i class="fas fa-code"></i></p><br>
+            <p class="card-subtitle">Many projects</p><br>
             <p>JavaScript</p><br>
             <p>CSS, Sass</p><br>
-            <p>MERN stack: MongoDB with Express, React and Node.js</p><br>
-            <p>Python stack: PostgreSQL with Flask, Python and React</p><br>
+            <p>React</p><br>
+            <p>MERN stack: MongoDB, Express and Node.js</p><br>
             <p>RESTful API design</p><br>
             <p>JWT authentication</p><br>
-            <p>XML web-service design</p><br>
-            <p>API Testing: Insomnia, Postman, SoapUI, jmeter</p><br>
-            <p>SQL: PostgreSQL</p><br>
-            <p>NoSQL: MongoDB</p><br>
             <p>Collaborative tooling: Git and GitHub</p><br>
+            <p>API Testing: Insomnia, Postman, SoapUI, jmeter</p><br>
+            <p class="card-subtitle">A few projects</p><br>
+            <p>Python stack: PostgreSQL, Flask and Python</p><br>
+            <p>XML web-service design</p><br>
+            <p class="card-subtitle">Experimented with</p><br>
             <p>LAMP stack development</p><br>
             <p>Other languages: ABAP, Visual Basic, PHP, Java</p>
           </div>
-          <div class="container grey-light-container">
-            <h3><i class="fas fa-briefcase"></i> Business skills</h3><br>
+          <div class="card grey-light-card">
+            <p class="card-title"><i class="fas fa-briefcase"></i> Business skills</p><br>
             <p>Communication appropriate to audience</p>
             <p>Experience leading offshore development</p>
             <p>Team lead of 10+ analysts</p>
@@ -121,22 +124,22 @@
       <section id="section-five">
         <h2><span id="portfolio"></span>Portfolio</h2>
         <div id="section-five-links">
-          <h3><a class="change-portfolio">picoBank</a></h3>
-          <h3><a class="change-portfolio">Pacman</a></h3>
-          <h3><a class="change-portfolio">Buddle!</a></h3>
-          <h3><a class="change-portfolio">JavaDrip</a></h3>
-          <h3><a class="change-portfolio">Memory Game</a></h3>
-          <h3><a class="change-portfolio">Personal website</a></h3>
-          <h3><a class="change-portfolio">Personal Blog</a></h3>
+          <p><a class="change-portfolio">picoBank</a></p>
+          <p><a class="change-portfolio">Pacman</a></p>
+          <p><a class="change-portfolio">Buddle!</a></p>
+          <p><a class="change-portfolio">JavaDrip</a></p>
+          <p><a class="change-portfolio">Memory Game</a></p>
+          <p><a class="change-portfolio">Personal website</a></p>
+          <p><a class="change-portfolio">Personal Blog</a></p>
         </div>
-        <div id="section-five-content">
-            <p>
+        <div id="section-five-content" class="card">
+            <p class="portfolio-title">
               <span class="portfolio-item portfolio-name">Name</span>
               <a class="portfolio-item portfolio-siteLink">&nbsp;<i class="fas fa-link"></i></a>
               <a class="portfolio-item portfolio-githubLink"> <i class="fab fa-github"></i></a>
             </p>
             <p class="portfolio-item portfolio-tech">The tech</p>
-            <p class="portfolio-item portfolio-title">Title</p>
+            <p class="portfolio-item portfolio-subtitle">Title</p>
             <small class="portfolio-item portfolio-description">A longer discription</small>
             <img class="portfolio-item portfolio-image" src=""/>
         </div>
@@ -148,24 +151,24 @@
 
       <section id="section-four">
         <h2><span id="personal"></span>My personal side</h2>
-        <div id="section-four-content" class="grey-light-container">
-          <div class="container">
-            <h3><i class="fas fa-utensils"></i> Keen cook</h3><br>
+        <div id="section-four-content" class="grey-light-card">
+          <div class="card">
+            <p class="card-title"><i class="fas fa-utensils"></i> Keen cook</p><br>
             <p>I love experimenting in the kitchen. </p>
             <small>The results can be a little hit and miss, so unfortunately my boyfriend isnt always that keen on the results</small>
           </div>
-          <div class="container">
-            <h3><i class="fas fa-bicycle"></i> Cyclist</h3><br>
+          <div class="card">
+            <p class="card-title"><i class="fas fa-bicycle"></i> Cyclist</p><br>
             <p>Who needs the stress of the tube.</p>
             <small>I use London's Boris Bikes wherever I can to get around, despite the horrific traffic in London</small>
           </div>
-          <div class="container">
-            <h3><i class="fas fa-passport"></i> Northerner</h3><br>
+          <div class="card">
+            <p class="card-title"><i class="fas fa-passport"></i> Northerner</p><br>
             <p>Born and bred in Yorkshire. </p>
             <small>I somehow lost my accent and I'm not happy about it</small>
           </div>
-          <div class="container">
-            <h3><i class="fas fa-leaf"></i> Treats plants like pets</h3><br>
+          <div class="card">
+            <p class="card-title"><i class="fas fa-leaf"></i> Treats plants like pets</p><br>
             <p>My flat looks like a jungle.</p>
             <small>They're a fairly recent addition to the family. Somehow I havent killed any of them yet</small>
           </div>

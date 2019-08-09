@@ -4,15 +4,16 @@
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
 body{
-  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
   letter-spacing: -0.5px;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 body.snap-parent{
   /* -webkit-scroll-snap-type: y mandatory;
@@ -25,20 +26,6 @@ a{
     color: inherit;
 }
 
-/* Main menu header */
-h1{
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: -3px;
-  display: inline-block;
-}
-
-h2{
-  font-size: 1.8rem;
-  font-weight: 300;
-}
-
-
 p{
   position: relative;
   padding: 2px 8px;
@@ -48,7 +35,7 @@ small{
   position: relative;
   display: inline-block;
   padding:4px 8px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: normal;
 }
 
@@ -56,7 +43,6 @@ header{
   position: fixed;
   z-index: 4;
   right: 25px;
-  transition: all, 0.5s;
   color: rgba(0,0,0,0.1);
   opacity: 0;
   transform: rotate(90deg) translateX(100%);
@@ -110,6 +96,8 @@ section h2, footer h2{
   top: 60px;
   position: absolute;
   align-self: center;
+  font-size: 1.8rem;
+  font-weight: 300;
 }
 
 section h2 span{
@@ -117,32 +105,37 @@ section h2 span{
   top:-50px;
 }
 
-.container{
+.card{
   padding: 5px;
   min-width:300px;
   max-width:430px;
   text-align: left;
 }
 
-.container h3{
-  padding:5px 10px 5px 8px;
+.card .card-title{
+  padding: 5px 10px 5px 8px;
   display: inline-block;
   font-family: 'Permanent Marker', cursive;
+  font-size: 1.2em;
 }
 
-.container p{
+.card .card-subtitle{
+  background-color: rgba(255, 0, 153, 0.7);
+}
+
+.card p{
   display: inline-block;
   font-size: 1.1rem;
 }
 
-.container > *{
+.card > *{
   border-left: 3px solid black;
 }
 
-.container-left{
+.card-left{
   text-align: right;
 }
-.container-left > *{
+.card-left > *{
   border-right: 3px solid black;
   border-left: 0;
 }
@@ -151,7 +144,14 @@ section h2 span{
 #section-one{
   align-items: flex-start;
   justify-content: center;
-  background-image: linear-gradient(to right, #ffffff 0%, rgba(110, 13, 208, 0.9) 20%, rgba(255, 0, 153, 0.9) 50%, rgba(255, 102, 0, 0.9) 80%, #ffffff 100%), url(img/map.jpg);
+  animation-name: background-movement;
+  animation-iteration-count: infinite;
+  background: 
+  linear-gradient(70deg, transparent 34.5%, rgba(255, 0, 153, 0.9) 35%, rgba(255, 0, 153, 0.9) 60%, transparent 60.5%), 
+  linear-gradient(70deg, transparent 49.5%, rgba(110, 13, 208, 0.9) 50%, rgba(110, 13, 208, 0.9) 80%, transparent 80.5%), 
+    #fff
+    /* linear-gradient(-70deg, #ffffff 0%, #ffffff 19.5%, rgba(110, 13, 208, 0.7) 20%, rgba(255, 0, 153, 0.7) 50%, rgba(255, 102, 0, 0.7) 80%, #ffffff 80.5%, #ffffff 100%),  */
+    url(img/map.jpg);
   background-size: cover;
   background-blend-mode:screen;
   background-position: bottom;
@@ -162,11 +162,15 @@ section h2 span{
   background-color: initial;
   border-bottom: 5px solid black;
 }
-#section-one .title{
-  font-size: 4em;
+#section-one h1.title{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 0px 12px;
   letter-spacing: -5px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  display: inline-block;
 }
 #section-one .subtitle{
   font-size: 2em;
@@ -212,7 +216,7 @@ section h2 span{
   justify-content: space-evenly;
 }
 
-#section-two .container{
+#section-two .card{
   max-width:330px;
 }
 
@@ -230,7 +234,7 @@ section h2 span{
 
 
 
-#section-three .container{
+#section-three .card{
   max-width: calc(80vw / 2);
 }
 
@@ -245,20 +249,20 @@ section h2 span{
   align-items: flex-start;
   justify-content: space-around;
   flex-direction: column; 
-  min-width: 210px;
+  min-width: 215px;
 }
 #section-five-links a{
-  background-color: rgba(200, 200, 200, 0.5); /* H3 colour override */
+  background-color: rgba(200, 200, 200, 0.5); 
+  border-left: 3px solid rgba(200, 200, 200, 0.5);
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 2px;
-  font-size: 1em;
   padding: 8px;
   margin: 2px 2px;
   cursor: pointer;
 }
 #section-five-links a.active{
-  border-left: 3px solid rgba(255, 0, 153, 0.9);
+  border-color: rgba(255, 0, 153, 0.9);
 }
 
 #section-five-content{
@@ -268,29 +272,25 @@ section h2 span{
   flex-direction: column; 
   max-width: 400px;
 }
-#section-five-content p, #section-five-content small{
-  border-left: 3px solid rgba(255, 0, 153, 0.9);
-  background-color: rgba(200, 200, 200, 0.5);
+#section-five-content > *{
+  border-color: rgba(255, 0, 153, 0.9);
+  background-color: rgba(255, 0, 153, 0.7);
   padding: 5px 8px;
 }
-#section-five-content p:first-child{
+
+#section-five-content .portfolio-title{
+  background-color: rgba(200, 200, 200, 0.5);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-#section-five-content p:not(:first-child), #section-five-content small{
-  background-color: rgba(255, 0, 153, 0.7);
-}
-#section-five-content p.portfolio-tech{
+#section-five-content .portfolio-tech{
   background-color: rgba(255, 102, 0, 0.9);
 }
-#section-five-content p:last-child{
-  font-size: 1em; 
-}
+
 #section-five-content .portfolio-image{
   max-width: 300px;
-  border-left: 3px solid rgba(255, 0, 153, 0.9);
+  padding: 0;
 }
-
 
 
 /* Personal section */
@@ -299,16 +299,13 @@ section h2 span{
   grid-template-columns: repeat(2, minmax(300px, 350px));
   grid-gap: 5vw;
 }
-#section-four-content h3, #section-four-content p, #section-four-content small{
-  border-left: 3px solid black;
-}
+
 
 /* Footer --------------------------------------------------- */
 footer{
   position: relative;
   background-color: #333333;
   padding: 100px 5vw 20px 5vw;
-  border-top: 10px solid #333333;
   overflow: hidden;
 }
 
@@ -345,7 +342,7 @@ footer a, footer h2, footer{
   #main-menu.show{
     right: 0;
   }
-  #section-one .title{
+  #section-one h1.title{
     font-size: 3em;
   }
   #section-one .subtitle{
@@ -405,25 +402,26 @@ section *:not(.decoration){
   animation-name: odd-movement;
 }
 
-.neon-pink, .pink-container > *{
+.neon-pink, .pink-card > *{
   background-color: rgba(255, 0, 153, 0.7);
+  /* ff0099 */
 }
-.neon-yellow, .yellow-container > *{
+.neon-yellow, .yellow-card > *{
   background-color: rgba(243, 243, 21, 0.7);
 }
-.neon-blue, .blue-container > *{
+.neon-blue, .blue-card > *{
   background-color: rgba(20, 255, 218, 0.7);
 }
-.neon-green, .green-container > *{
+.neon-green, .green-card > *{
   background-color: rgba(131, 245, 44, 0.7);
 }
-.neon-purple, .purple-container > *{
+.neon-purple, .purple-card > *{
   background-color: rgba(110, 13, 208, 0.7);
 }
-.neon-orange, .orange-container > *{
+.neon-orange, .orange-card > *{
   background-color: rgba(255, 102, 0, 0.9);
 }
-.grey-light, .grey-light-container h3, .grey-light-container p, .grey-light-container small{
+.grey-light, .grey-light-card p, .grey-light-card small{
   background-color: rgba(200, 200, 200, 0.7);
 }
 .grey-mid{

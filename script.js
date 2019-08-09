@@ -66,8 +66,8 @@ function populatePortfolio(portfolioId){
       case 'portfolio-name':
         el.innerHTML = portfolioContent[portfolioId].name
         break
-      case 'portfolio-title':
-        el.innerHTML = portfolioContent[portfolioId].title
+      case 'portfolio-subtitle':
+        el.innerHTML = portfolioContent[portfolioId].subtitle
         break
       case 'portfolio-siteLink':
         el.href = portfolioContent[portfolioId].siteLink
@@ -130,7 +130,7 @@ function domLoaded(){
 
     function checkVisible(elm) {
       var rect = elm.getBoundingClientRect()
-      console.log(rect.top)
+      // console.log(rect.top)
       var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
       return !(rect.bottom < 0 || rect.top - viewHeight >= 0)
     }
@@ -152,12 +152,11 @@ function domLoaded(){
 document.addEventListener('DOMContentLoaded', domLoaded)
 
 
-
 const portfolioContent = [
   {
     name: 'picoBank',
-    title: 'A modern bank app with analytics.',
-    description: 'u nocturna ut se exhibere mutuatur is. Ima instar ero tribuo infixa vim sae. Missae obvium nullas p.',
+    subtitle: 'A modern bank app with analytics.',
+    description: 'App with customer spending analysis with interactive charts. Capability includes: ‘instant’ messaging, linking accounts, transactions and analysis. Also demonstrates complex database seeding, with random transactions, bills and salary payments',
     tech: 'React, Flask, Python, PostgreSQL',
     siteLink: 'https://picobank-app.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/sei-picobank',
@@ -165,55 +164,55 @@ const portfolioContent = [
   },
   {
     name: 'Pacman',
-    title: 'The classic arcade game built in JavaScript.',
+    subtitle: 'The classic arcade game built in JavaScript.',
     description: 'My first attempt at a game with complex logic. The ghosts all think independently, and have different strategy for getting to pacman. To top it off, it has a gloriously retro 80s vibe.',
-    tech: 'Javascript',
+    tech: 'JavaScript',
     siteLink: 'https://tomtidswell.github.io/sei-pacman/',
     githubLink: 'https://github.com/tomtidswell/sei-pacman',
     screen: './img/pacman.png'
   },
   {
     name: 'Buddle!',
-    title: 'A social event finding app.',
-    description: 'Ego regi fuit dici imo ego esto mea. Ubi sum attigi qui sponte sacras. Detrahere veritates meo hic tantundem explorant tangantur ita faciendam.',
-    tech: 'React, Node.js, MongoDB, Express',
+    subtitle: 'A social event finding app.',
+    description: 'Connect with other users, and attend their events by subscribing to their listings. Includes user registration, authentication and industry standard security measures.',
+    tech: 'React, JavaScript, Node.js, MongoDB, Express',
     siteLink: 'https://buddle-sst.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/sei-buddle',
     screen: ''
   },
   {
     name: 'JavaDrip',
-    title: 'Start your morning the right way, every day.',
-    description: 'Du nocturna ut se exhibere mutuatur is. Ima instar ero tribuo infixa vim sae. Missae obvium nullas pileos aut ibidem pro fateri agi hic.',
-    tech: 'React, Node.js, MongoDB, Express',
+    subtitle: 'Start your morning the right way, every day.',
+    description: 'Morning routine app designed to provide a morning briefing of travel info and what to wear (computed from weather data), based on location.',
+    tech: 'React, JavaScript, Node.js, MongoDB, Express',
     siteLink: 'https://tomtidswell.github.io/sei-javadrip/',
     githubLink: 'https://github.com/tomtidswell/sei-javadrip',
     screen: ''
   },
   {
+    name: 'Rock, paper, scissors',
+    subtitle: 'Even more fun with lizard and spock too.',
+    description: 'Either play the computer, or watch the computer play its self. I used this game as an opportunity to try out some 3D transitions to immerse the player into the game.'  ,
+    tech: 'JavaScript',
+    siteLink: '',
+    githubLink: '',
+    screen: ''
+  },
+  {
+    name: 'PlantSwap',
+    subtitle: 'Plant swapping social network.',
+    description: 'Want to trade plants with like minded people? This is the app for you!'  ,
+    tech: 'React, JavaScript, Node.js, MongoDB, Express',
+    siteLink: 'https://plantswaps.herokuapp.com/',
+    githubLink: '',
+    screen: ''
+  },
+  {
     name: 'Memory Game',
-    title: 'Interactive card game.',
-    description: 'This game was originally part of my General Assembly coursework. I enhanced the functionality: its now randomised and will track your score.'  ,
+    subtitle: 'Interactive card game.',
+    description: 'This game was originally part of my General Assembly coursework. I enhanced the functionality: its now randomised and will track your score.',
     tech: 'Javascript',
     siteLink: 'memorygame/index.html',
-    githubLink: '',
-    screen: ''
-  },
-  {
-    name: 'Personal website',
-    title: 'My portfolio v1.',
-    description: 'The site began life as a tutorial then quickly transformed into my new portfolio. It demonstrates a responsive layout which switches based on screen width.',
-    tech: 'Javascript',
-    siteLink: 'ga-task-1.html',
-    githubLink: '',
-    screen: ''
-  },
-  {
-    name: 'Personal Blog',
-    title: 'A blog page. Experimentation with transitions.',
-    description: 'It includes some experimentation with transitions and jQuery, and started life as a tutorial without those elements.',
-    tech: 'Javascript',
-    siteLink: 'ga-task-2.html',
     githubLink: '',
     screen: ''
   }
