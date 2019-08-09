@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -97,7 +98,8 @@ section{
   /* border-top: 10px solid #333333; */
   overflow: hidden;
   height: auto;
-  min-height: calc(100vh + 10px);
+  min-height: 100vh;
+  background-color: white;
 }
 
 section.snap{
@@ -153,9 +155,12 @@ section h2 span{
   background-size: cover;
   background-blend-mode:screen;
   background-position: bottom;
+  background-attachment: fixed;
   padding: 15vh 10vw;
   border:0;
-  min-height: 100vh;
+  min-height: calc(100vh + 5px);
+  background-color: initial;
+  border-bottom: 5px solid black;
 }
 #section-one .title{
   font-size: 4em;
@@ -263,7 +268,7 @@ section h2 span{
   flex-direction: column; 
   max-width: 400px;
 }
-#section-five-content p{
+#section-five-content p, #section-five-content small{
   border-left: 3px solid rgba(255, 0, 153, 0.9);
   background-color: rgba(200, 200, 200, 0.5);
   padding: 5px 8px;
@@ -272,7 +277,7 @@ section h2 span{
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-#section-five-content p:not(:first-child){
+#section-five-content p:not(:first-child), #section-five-content small{
   background-color: rgba(255, 0, 153, 0.7);
 }
 #section-five-content p.portfolio-tech{

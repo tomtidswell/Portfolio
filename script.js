@@ -120,8 +120,26 @@ function domLoaded(){
   
   //Set events
   //on font load - there was an issue with document sizing due to a delay with font rendering, so I included this check for external fonts before rendering the decoration randomisation
-  document.fonts.onloadingdone = ()=>decorations.forEach(randomiseDecoration)
+  document.fonts.onloadingdone = ()=>{
+    decorations.forEach(randomiseDecoration)
+
+    const title = document.querySelector('.title')
+    window.onscroll = function () {
+      checkVisible(title)
+    }
+
+    function checkVisible(elm) {
+      var rect = elm.getBoundingClientRect()
+      console.log(rect.top)
+      var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
+      return !(rect.bottom < 0 || rect.top - viewHeight >= 0)
+    }
+    checkVisible(title)
+
+  }
   document.addEventListener('scroll', transHeading)
+
+
 
   // Update scroll position for first time
   transHeading()
@@ -142,16 +160,16 @@ const portfolioContent = [
     description: 'u nocturna ut se exhibere mutuatur is. Ima instar ero tribuo infixa vim sae. Missae obvium nullas p.',
     tech: 'React, Flask, Python, PostgreSQL',
     siteLink: 'https://picobank-app.herokuapp.com/',
-    githubLink: 'https://tomtidswell.github.io/',
+    githubLink: 'https://github.com/tomtidswell/sei-picobank',
     screen: './img/picobank.png'
   },
   {
     name: 'Pacman',
     title: 'The classic arcade game built in JavaScript.',
-    description: 'Dem his quam ipsi boni. Dubium altera cau duo nihilo summam lumini nia humano. Se jactantur id distinguo im videantur ut. Scriptumrmulta ac.',
+    description: 'My first attempt at a game with complex logic. The ghosts all think independently, and have different strategy for getting to pacman. To top it off, it has a gloriously retro 80s vibe.',
     tech: 'Javascript',
     siteLink: 'https://tomtidswell.github.io/sei-pacman/',
-    githubLink: '',
+    githubLink: 'https://github.com/tomtidswell/sei-pacman',
     screen: './img/pacman.png'
   },
   {
@@ -160,7 +178,7 @@ const portfolioContent = [
     description: 'Ego regi fuit dici imo ego esto mea. Ubi sum attigi qui sponte sacras. Detrahere veritates meo hic tantundem explorant tangantur ita faciendam.',
     tech: 'React, Node.js, MongoDB, Express',
     siteLink: 'https://buddle-sst.herokuapp.com/',
-    githubLink: '',
+    githubLink: 'https://github.com/tomtidswell/sei-buddle',
     screen: ''
   },
   {
@@ -169,7 +187,7 @@ const portfolioContent = [
     description: 'Du nocturna ut se exhibere mutuatur is. Ima instar ero tribuo infixa vim sae. Missae obvium nullas pileos aut ibidem pro fateri agi hic.',
     tech: 'React, Node.js, MongoDB, Express',
     siteLink: 'https://tomtidswell.github.io/sei-javadrip/',
-    githubLink: '',
+    githubLink: 'https://github.com/tomtidswell/sei-javadrip',
     screen: ''
   },
   {
