@@ -115,8 +115,10 @@ section h2 span{
 .card .card-title{
   padding: 5px 10px 5px 8px;
   display: inline-block;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .card .card-subtitle{
@@ -161,6 +163,7 @@ section h2 span{
   min-height: calc(100vh + 5px);
   background-color: initial;
   border-bottom: 5px solid black;
+  animation: fade-in 5s;
 }
 #section-one h1.title{
   background-color: rgba(255, 255, 255, 0.8);
@@ -172,6 +175,8 @@ section h2 span{
   letter-spacing: -3px;
   display: inline-block;
 }
+
+
 #section-one .subtitle{
   font-size: 2em;
   background-color: rgba(220, 220, 220, 0.8);
@@ -221,8 +226,6 @@ section h2 span{
 }
 
 
-
-
 /* Skills section */
 
 #section-three .skill-wrapper{
@@ -231,7 +234,6 @@ section h2 span{
   flex-direction: row;
   justify-content: space-evenly;
 }
-
 
 
 #section-three .card{
@@ -442,4 +444,8 @@ section *:not(.decoration){
 @keyframes odd-movement {
   from {transform: translateX(-300px) skewX(20deg);}
   to {transform: translateX(300px) skewX(20deg);}
+}
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

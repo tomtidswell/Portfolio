@@ -5,6 +5,8 @@ const neonClasses = ['neon-pink','neon-yellow','neon-blue','neon-green','neon-pu
 const greyscaleClasses = ['grey-mid','grey-light','grey-dark','grey-extradark']
 
 let decorations = null
+let title = null
+let subtitle = null
 let sections = null
 let bodyEl = null
 let headerBand = null
@@ -52,11 +54,20 @@ function applySnapping(){
 
 // Change the heading based on scroll position
 function transHeading() {
-  if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
+  if (document.documentElement.scrollTop > viewHeight) {
     headerBand.classList.add('scrolled')
   } else {
     headerBand.classList.remove('scrolled')
+    addTitleOffset(document.documentElement.scrollTop / 2)
   }
+}
+
+function addTitleOffset(offset){
+  console.log(offset, title)
+  title.style.transform = `translateY(${offset}px)`
+  subtitle.style.transform = `translateY(${offset}px)`
+  console.log(title.style.transform)
 }
 
 function populatePortfolio(portfolioId){
@@ -112,11 +123,16 @@ function buildPortfolioLinks() {
 function domLoaded(){
   //fetch the DOM items
   headerBand = document.getElementById('header-band')
+  title = document.querySelector('h1.title')
+  subtitle = document.querySelector('div.subtitle')
   portfolioLinks = document.getElementById('section-five-links')
   decorations = document.querySelectorAll('.decoration')
   portfolioElem = [...document.querySelectorAll('.portfolio-item')]
   bodyEl = document.querySelector('body')
   sections = [...document.querySelectorAll('section')]
+
+  //add the loaded class to the body
+  bodyEl.classList.add('loaded')
   
   //Set events
   //on font load - there was an issue with document sizing due to a delay with font rendering, so I included this check for external fonts before rendering the decoration randomisation
