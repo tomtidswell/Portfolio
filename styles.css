@@ -18,7 +18,7 @@ body{
 body.snap-parent{
   /* -webkit-scroll-snap-type: y mandatory;
   -ms-scroll-snap-type: y mandatory; */
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 
@@ -339,6 +339,12 @@ footer a, footer h2, footer{
 
 
 @media screen and (max-width: 600px) {
+  body.snap-parent{
+    /* -webkit-scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory; */
+    scroll-snap-type: y proximity;
+  }
+  
   #main-menu{
     width: 90%;
   }
