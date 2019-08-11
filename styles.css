@@ -112,7 +112,7 @@ section h2 span{
   text-align: left;
 }
 
-.card .card-title{
+.card-title, .portfolio-switch, .portfolio-title{
   padding: 5px 10px 5px 8px;
   display: inline-block;
   font-family: 'Raleway', sans-serif;
@@ -248,21 +248,25 @@ section h2 span{
 }
 #section-five-links{
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-around;
   flex-direction: column; 
   min-width: 215px;
 }
 #section-five-links a{
-  background-color: rgba(200, 200, 200, 0.5); 
-  border-left: 3px solid rgba(200, 200, 200, 0.5);
-  text-transform: uppercase;
-  font-weight: 300;
-  letter-spacing: 2px;
-  padding: 8px;
-  margin: 2px 2px;
+  /* padding: 3px 5px; */
+  text-align: right;
   cursor: pointer;
+  padding: 5px 10px;
+  margin: 5px;
 }
+
+
+#section-five-links a.portfolio-switch, #section-five-content .portfolio-title{
+  background-color: rgba(200, 200, 200, 0.5);
+  border-right: 3px solid rgba(200, 200, 200, 0.5);
+}
+
 #section-five-links a.active{
   border-color: rgba(255, 0, 153, 0.9);
 }
@@ -280,11 +284,7 @@ section h2 span{
   padding: 5px 8px;
 }
 
-#section-five-content .portfolio-title{
-  background-color: rgba(200, 200, 200, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+
 #section-five-content .portfolio-tech{
   background-color: rgba(255, 102, 0, 0.9);
 }
@@ -309,6 +309,7 @@ footer{
   background-color: #333333;
   padding: 100px 5vw 20px 5vw;
   overflow: hidden;
+  min-height: 50vh;
 }
 
 footer #footer-content{

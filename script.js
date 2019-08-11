@@ -111,6 +111,7 @@ function buildPortfolioLinks() {
   portfolioLinks.innerHTML = ''
   portfolioContent.forEach((item, index) => {
     const el = document.createElement('a')
+    el.classList.add('portfolio-switch')
     el.innerText = item.name
     el.addEventListener('click', ()=>populatePortfolio(index))
     portfolioLinks.appendChild(el)
