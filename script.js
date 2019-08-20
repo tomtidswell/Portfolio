@@ -7,13 +7,11 @@ const greyscaleClasses = ['grey-mid','grey-light','grey-dark','grey-extradark']
 let decorations = null
 let title = null
 let subtitle = null
-let sections = null
 let bodyEl = null
 let headerBand = null
 let portfolioLinks = null
 const portfolioLinkEl = []
 let portfolioElem = []
-
 
 
 // FUNCTIONS
@@ -37,18 +35,14 @@ function randomiseDecoration(decoration){
   //make the movement seem more random
   decoration.style.animationDuration = `${Math.floor(Math.random() * 30) + 30}s`
   decoration.style.animationDirection = Math.random() > 0.5 ? 'alternate' : 'alternate-reverse'
-
-
-  // add the snapping behaviour to the body and sections
-  // we need to do this thanks to some weird behaviour in chrome where it stops working after a page ajustment
-  applySnapping()
   
 }
 
 
 function applySnapping(){
+  const snapperElements = [...document.querySelectorAll('section')]
   bodyEl.classList.add('snap-parent')
-  sections.forEach(section => section.classList.add('snap'))
+  snapperElements.forEach(section => section.classList.add('snap'))
 }
 
 
@@ -130,7 +124,6 @@ function domLoaded(){
   decorations = document.querySelectorAll('.decoration')
   portfolioElem = [...document.querySelectorAll('.portfolio-item')]
   bodyEl = document.querySelector('body')
-  sections = [...document.querySelectorAll('section')]
 
   //add the loaded class to the body
   bodyEl.classList.add('loaded')
@@ -152,6 +145,9 @@ function domLoaded(){
       return !(rect.bottom < 0 || rect.top - viewHeight >= 0)
     }
     checkVisible(title)
+
+    // add the snapping behaviour to the body and sections - we need to do this thanks to some weird behaviour in chrome where it stops working after a page ajustment
+    applySnapping()
 
   }
   document.addEventListener('scroll', transHeading)

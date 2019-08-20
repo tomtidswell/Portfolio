@@ -61,7 +61,8 @@ nav ul{
 nav li{
   list-style: none;
   text-decoration: none;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0,1);
+  text-shadow: 1px 1px 10px #ffffff;
   padding: 3px 10px;
 }
 nav a:hover{
@@ -88,7 +89,7 @@ section{
   background-color: white;
 }
 
-section.snap{
+section.snap, footer.snap{
   scroll-snap-align: start;
 }
 
@@ -304,26 +305,16 @@ section h2 span{
 
 
 /* Footer --------------------------------------------------- */
-footer{
-  position: relative;
+#footer{
   background-color: #333333;
-  padding: 100px 5vw 20px 5vw;
-  overflow: hidden;
-  min-height: 50vh;
+  color: white;
 }
 
-footer #footer-content{
-  position: relative;
-  z-index: 3;
+#footer #footer-content{
+  width: 100%;
 }
 
-footer p{
-  padding: 2px 0;
-}
 
-footer a, footer h2, footer{
-  color: #dddddd;
-}
 
 
 #copyright-statement{
