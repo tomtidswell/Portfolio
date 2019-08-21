@@ -173,7 +173,7 @@ const portfolioContent = [
     tech: 'React, Flask, Python, PostgreSQL',
     siteLink: 'https://picobank-app.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/sei-picobank',
-    screen: './img/picobank.png'
+    screen: './img/picobank.jpg'
   },
   {
     name: 'Pacman',
@@ -182,7 +182,7 @@ const portfolioContent = [
     tech: 'JavaScript',
     siteLink: 'https://tomtidswell.github.io/sei-pacman/',
     githubLink: 'https://github.com/tomtidswell/sei-pacman',
-    screen: './img/pacman.png'
+    screen: './img/pacman.jpg'
   },
   {
     name: 'Buddle!',
@@ -191,7 +191,7 @@ const portfolioContent = [
     tech: 'React, JavaScript, Node.js, MongoDB, Express',
     siteLink: 'https://buddle-sst.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/sei-buddle',
-    screen: ''
+    screen: './img/buddle.jpg'
   },
   {
     name: 'JavaDrip',
@@ -209,7 +209,7 @@ const portfolioContent = [
     tech: 'JavaScript',
     siteLink: 'https://tomtidswell.github.io/es6-rock-paper-scissors/',
     githubLink: 'https://github.com/tomtidswell/es6-rock-paper-scissors/',
-    screen: ''
+    screen: './img/rockpaperscissors.jpg'
   },
   {
     name: 'PlantSwap',
@@ -218,7 +218,7 @@ const portfolioContent = [
     tech: 'React, JavaScript, Node.js, MongoDB, Express',
     siteLink: 'https://plantswaps.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/plantswap',
-    screen: ''
+    screen: './img/plantswap.jpg'
   },
   {
     name: 'Memory Game',
@@ -227,6 +227,6 @@ const portfolioContent = [
     tech: 'Javascript',
     siteLink: 'https://tomtidswell.github.io/sei-memorygame/',
     githubLink: 'https://github.com/tomtidswell/sei-memorygame',
-    screen: ''
+    screen: './img/memorygame.jpg'
   }
 ]
