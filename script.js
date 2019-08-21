@@ -207,8 +207,8 @@ const portfolioContent = [
     subtitle: 'Even more fun with lizard and spock too.',
     description: 'Either play the computer, or watch the computer play its self. I used this game as an opportunity to try out some 3D transitions to immerse the player into the game.'  ,
     tech: 'JavaScript',
-    siteLink: '',
-    githubLink: '',
+    siteLink: 'https://tomtidswell.github.io/es6-rock-paper-scissors/',
+    githubLink: 'https://github.com/tomtidswell/es6-rock-paper-scissors/',
     screen: ''
   },
   {
@@ -217,7 +217,7 @@ const portfolioContent = [
     description: 'Want to trade plants with like minded people? This is the app for you!'  ,
     tech: 'React, JavaScript, Node.js, MongoDB, Express',
     siteLink: 'https://plantswaps.herokuapp.com/',
-    githubLink: '',
+    githubLink: 'https://github.com/tomtidswell/plantswap',
     screen: ''
   },
   {
@@ -225,8 +225,8 @@ const portfolioContent = [
     subtitle: 'Interactive card game.',
     description: 'This game was originally part of my General Assembly coursework. I enhanced the functionality: its now randomised and will track your score.',
     tech: 'Javascript',
-    siteLink: 'memorygame/index.html',
-    githubLink: '',
+    siteLink: 'https://tomtidswell.github.io/sei-memorygame/',
+    githubLink: 'https://github.com/tomtidswell/sei-memorygame',
     screen: ''
   }
 ]
