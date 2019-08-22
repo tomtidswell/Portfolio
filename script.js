@@ -58,10 +58,8 @@ function transHeading() {
 }
 
 function addTitleOffset(offset){
-  console.log(offset, title)
   title.style.transform = `translateY(${offset}px)`
   subtitle.style.transform = `translateY(${offset}px)`
-  console.log(title.style.transform)
 }
 
 function populatePortfolio(portfolioId){
