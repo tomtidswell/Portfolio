@@ -61,10 +61,13 @@ function scrollHandler() {
   }
 
   sections.forEach(section => {
-    // if(section.id !== 'section-two') return
+    //apply the menu class for the section in focus
     checkVisible(section) ? 
       headerBand.classList.add(section.id) :
       headerBand.classList.remove(section.id)
+    
+    //apply a class to the section once each section is visible
+    if (checkVisible(section)) section.classList.add('show')
   })
 
 }

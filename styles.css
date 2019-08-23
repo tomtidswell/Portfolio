@@ -112,6 +112,14 @@ section.snap, footer.snap{
   scroll-snap-align: start;
 }
 
+section *:not(.decoration){
+  opacity: 0;
+  transition: opacity 0.4s;
+  transition-delay: 0.2s;
+}
+section.show *:not(.decoration){
+  opacity: 1;
+}
 
 
 .card{
