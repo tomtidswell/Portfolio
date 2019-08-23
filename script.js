@@ -7,6 +7,8 @@ const greyscaleClasses = ['grey-mid','grey-light','grey-dark','grey-extradark']
 let decorations = null
 let title = null
 let subtitle = null
+let titleLinks = null
+let sections = null
 let bodyEl = null
 let headerBand = null
 let portfolioLinks = null
@@ -47,19 +49,37 @@ function applySnapping(){
 
 
 // Change the heading based on scroll position
-function transHeading() {
+function scrollHandler() {
   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
+  
+  //work out if the first section has been scrolled past
   if (document.documentElement.scrollTop > viewHeight) {
     headerBand.classList.add('scrolled')
   } else {
     headerBand.classList.remove('scrolled')
     addTitleOffset(document.documentElement.scrollTop / 2)
   }
+
+  sections.forEach(section => {
+    // if(section.id !== 'section-two') return
+    checkVisible(section) ? 
+      headerBand.classList.add(section.id) :
+      headerBand.classList.remove(section.id)
+  })
+
 }
+
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect()
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)  
+  return rect.top < viewHeight / 2 && rect.bottom > viewHeight / 2
+}
+
 
 function addTitleOffset(offset){
   title.style.transform = `translateY(${offset}px)`
   subtitle.style.transform = `translateY(${offset}px)`
+  titleLinks.style.transform = `translateY(${offset}px)`
 }
 
 function populatePortfolio(portfolioId){
@@ -113,15 +133,19 @@ function buildPortfolioLinks() {
 }
 
 
+
+
 function domLoaded(){
   //fetch the DOM items
   headerBand = document.getElementById('header-band')
-  title = document.querySelector('h1.title')
-  subtitle = document.querySelector('div.subtitle')
+  title = document.querySelector('#section-one h1.title')
+  subtitle = document.querySelector('#section-one div.subtitle')
+  titleLinks = document.querySelector('#section-one div.links')
   portfolioLinks = document.getElementById('section-five-links')
   decorations = document.querySelectorAll('.decoration')
   portfolioElem = [...document.querySelectorAll('.portfolio-item')]
   bodyEl = document.querySelector('body')
+  sections = document.querySelectorAll('section')
 
   //add the loaded class to the body
   bodyEl.classList.add('loaded')
@@ -131,29 +155,16 @@ function domLoaded(){
   document.fonts.onloadingdone = ()=>{
     decorations.forEach(randomiseDecoration)
 
-    const title = document.querySelector('.title')
-    window.onscroll = function () {
-      checkVisible(title)
-    }
-
-    function checkVisible(elm) {
-      var rect = elm.getBoundingClientRect()
-      // console.log(rect.top)
-      var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
-      return !(rect.bottom < 0 || rect.top - viewHeight >= 0)
-    }
-    checkVisible(title)
-
     // add the snapping behaviour to the body and sections - we need to do this thanks to some weird behaviour in chrome where it stops working after a page ajustment
     applySnapping()
 
   }
-  document.addEventListener('scroll', transHeading)
 
+  window.onscroll = () => scrollHandler()
 
 
   // Update scroll position for first time
-  transHeading()
+  scrollHandler()
   // set up the portfolio section
   populatePortfolio(0)
   buildPortfolioLinks()

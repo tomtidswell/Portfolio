@@ -31,6 +31,19 @@ p{
   padding: 2px 8px;
 }
 
+h2{
+  top: 60px;
+  position: absolute;
+  align-self: center;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+h2 span{
+  position:absolute; /*allows an offset for targeting the links */
+  top:-50px;
+}
+
 small{
   position: relative;
   display: inline-block;
@@ -50,6 +63,12 @@ header{
 }
 header.scrolled{
   opacity: 1;
+}
+header.section-two a.section-two,
+header.section-three a.section-three,
+header.section-four a.section-four,
+header.section-five a.section-five{
+  border-bottom: 3px solid rgba(255, 0, 153, 0.9);
 }
 
 nav ul{
@@ -81,7 +100,7 @@ section{
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding: 100px 5vw 50px 5vw;
+  padding: 120px 10vw 50px 10vw;
   /* border-top: 10px solid #333333; */
   overflow: hidden;
   height: auto;
@@ -93,18 +112,7 @@ section.snap, footer.snap{
   scroll-snap-align: start;
 }
 
-section h2, footer h2{
-  top: 60px;
-  position: absolute;
-  align-self: center;
-  font-size: 1.8rem;
-  font-weight: 300;
-}
 
-section h2 span{
-  position:absolute; /*allows an offset for targeting the links */
-  top:-50px;
-}
 
 .card{
   padding: 5px;
@@ -147,8 +155,6 @@ section h2 span{
 #section-one{
   align-items: flex-start;
   justify-content: center;
-  animation-name: background-movement;
-  animation-iteration-count: infinite;
   background: 
   linear-gradient(70deg, transparent 34.5%, rgba(255, 0, 153, 0.9) 35%, rgba(255, 0, 153, 0.9) 60%, transparent 60.5%), 
   linear-gradient(70deg, transparent 49.5%, rgba(110, 13, 208, 0.9) 50%, rgba(110, 13, 208, 0.9) 80%, transparent 80.5%), 
@@ -159,8 +165,6 @@ section h2 span{
   background-blend-mode:screen;
   background-position: bottom;
   background-attachment: fixed;
-  padding: 15vh 10vw;
-  border:0;
   min-height: calc(100vh + 5px);
   background-color: initial;
   border-bottom: 5px solid black;
@@ -175,14 +179,21 @@ section h2 span{
   text-transform: uppercase;
   letter-spacing: -3px;
   display: inline-block;
+  z-index: 4;
 }
-
-
 #section-one .subtitle{
   font-size: 2em;
-  background-color: rgba(220, 220, 220, 0.8);
+  background-color: rgba(200, 200, 200, 0.8);
   padding: 2px 15px;
   letter-spacing: -2px;
+  z-index: 4;
+}
+#section-one .links{
+  font-size: 2em;
+  background-color: rgba(100, 100, 100, 0.8);
+  padding: 2px 15px;
+  letter-spacing: -2px;
+  color: white;
 }
 #section-one .more{
   position: absolute;
@@ -197,18 +208,15 @@ section h2 span{
 
 
 /* About me section */
-
 #section-two{
   flex-direction: row;
+  padding: 120px 8vw 50px 8vw;
 } 
 
 #section-two span.bio{
   max-width: 550px;
-  column-width: 24ch;
-  column-gap: 40px;
   text-align: justify;
-  column-fill: balance;
-  padding: 0 5vw;
+  padding-left: 10px;
 }
 
 #section-two span.bio p{
@@ -220,6 +228,7 @@ section h2 span{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 10px 0;
 }
 
 #section-two .card{
@@ -305,28 +314,28 @@ section h2 span{
 
 
 /* Footer --------------------------------------------------- */
-#footer{
+footer{
+  position: relative;
   background-color: #333333;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-top: 5px solid rgba(255, 0, 153, 0.9);
+  overflow: hidden;
+  height: auto;
+  min-height: 10vh;
 }
 
-#footer #footer-content{
+footer #footer-content{
   width: 100%;
 }
-
-
-
 
 #copyright-statement{
   color: #999999;
 }
-.footer-line{
-  width:100%;
-  height:2px;
-  background-color: #999999;
-  margin: 20px 0 10px 0;
-}
-
 
 
 @media screen and (max-width: 600px) {
