@@ -212,7 +212,7 @@ const portfolioContent = [
     tech: 'React, JavaScript, Node.js, MongoDB, Express',
     siteLink: 'https://tomtidswell.github.io/sei-javadrip/',
     githubLink: 'https://github.com/tomtidswell/sei-javadrip',
-    screen: ''
+    screen: './img/javadrip.jpg'
   },
   {
     name: 'Rock, paper, scissors',
