@@ -183,7 +183,7 @@ const portfolioContent = [
     subtitle: 'A modern bank app with analytics.',
     description: 'App with customer spending analysis with interactive charts. Capability includes: ‘instant’ messaging, linking accounts, transactions and analysis. Also demonstrates complex database seeding, with random transactions, bills and salary payments',
     tech: 'React, Flask, Python, PostgreSQL',
-    siteLink: 'https://picobank-app.herokuapp.com/',
+    siteLink: 'https://picobank.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/sei-picobank',
     screen: './img/picobank.jpg'
   },
