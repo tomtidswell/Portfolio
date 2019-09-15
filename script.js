@@ -192,7 +192,7 @@ const portfolioContent = [
     subtitle: 'The classic arcade game built in JavaScript.',
     description: 'My first attempt at a game with complex logic. The ghosts all think independently, and have different strategy for getting to pacman. To top it off, it has a gloriously retro 80s vibe.',
     tech: 'JavaScript',
-    siteLink: 'https://tomtidswell.github.io/sei-pacman/',
+    siteLink: 'https://www.tomtidswell.co.uk/sei-pacman/',
     githubLink: 'https://github.com/tomtidswell/sei-pacman',
     screen: './img/pacman.jpg'
   },
@@ -210,7 +210,7 @@ const portfolioContent = [
     subtitle: 'Start your morning the right way, every day.',
     description: 'Morning routine app designed to provide a morning briefing of travel info and what to wear (computed from weather data), based on location.',
     tech: 'React, JavaScript, Node.js, MongoDB, Express',
-    siteLink: 'https://tomtidswell.github.io/sei-javadrip/',
+    siteLink: 'https://www.tomtidswell.co.uk/sei-javadrip/',
     githubLink: 'https://github.com/tomtidswell/sei-javadrip',
     screen: './img/javadrip.jpg'
   },
@@ -237,7 +237,7 @@ const portfolioContent = [
     subtitle: 'Interactive card game.',
     description: 'This game was originally part of my General Assembly coursework. I enhanced the functionality: its now randomised and will track your score.',
     tech: 'Javascript',
-    siteLink: 'https://tomtidswell.github.io/sei-memorygame/',
+    siteLink: 'https://www.tomtidswell.co.uk/sei-memorygame/',
     githubLink: 'https://github.com/tomtidswell/sei-memorygame',
     screen: './img/memorygame.jpg'
   }
