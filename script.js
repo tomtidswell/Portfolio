@@ -192,7 +192,7 @@ const portfolioContent = [
     subtitle: 'The classic arcade game built in JavaScript.',
     description: 'My first attempt at a game with complex logic. The ghosts all think independently, and have different strategy for getting to pacman. To top it off, it has a gloriously retro 80s vibe.',
     tech: 'JavaScript',
-    siteLink: 'https://www.tomtidswell.co.uk/sei-pacman/',
+    siteLink: 'https://sei-pacman.herokuapp.com/',
     githubLink: 'https://github.com/tomtidswell/sei-pacman',
     screen: './img/pacman.jpg'
   },
