@@ -127,6 +127,9 @@ section.show *:not(.decoration){
   min-width:300px;
   max-width:430px;
   text-align: left;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .card-title, .portfolio-switch, .portfolio-title{
@@ -153,6 +156,7 @@ section.show *:not(.decoration){
 
 .card-left{
   text-align: right;
+  align-items: flex-end;
 }
 .card-left > *{
   border-right: 3px solid black;
@@ -181,6 +185,7 @@ section.show *:not(.decoration){
 #section-one h1.title{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 0px 12px;
+  margin: 0;
   letter-spacing: -5px;
   font-family: 'Raleway', sans-serif;
   font-size: 5em;
@@ -387,6 +392,7 @@ footer #footer-content{
   #section-two span.bio{
     width: inherit;
     order: 1;
+    max-width: initial;
   }
 
   #section-three .skill-wrapper{
