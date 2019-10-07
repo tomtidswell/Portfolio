@@ -121,15 +121,28 @@ section.show *:not(.decoration){
   opacity: 1;
 }
 
+.two-columns{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
 .card{
-  padding: 5px;
+  padding: 5px 15px;
   min-width:300px;
   max-width:430px;
   text-align: left;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+}
+
+.two-columns .column{
+  max-width: calc(80vw / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-title, .portfolio-switch, .portfolio-title{
@@ -225,55 +238,17 @@ section.show *:not(.decoration){
   flex-direction: row;
 } 
 
-
-#section-two .highlights{
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-#section-two span.bio{
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  max-width: 350px;
-  text-align: justify;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#section-two span.bio p{
-  padding-bottom: 10px;
-}
-
 #section-two .mugshot{
   width: 150px;
   border-left: 3px solid black;
   border-radius: 0 30px 30px 0;
   background-color: rgba(255, 0, 153, 0.5);
-  margin: 20px 0;
-}
-
-#section-two .card{
-  max-width:330px;
+  margin: 5px 15px;
 }
 
 
 /* Skills section */
 
-#section-three .skill-wrapper{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-
-#section-three .card{
-  max-width: calc(80vw / 2);
-}
 
 
 /* Project section */
@@ -334,7 +309,6 @@ section.show *:not(.decoration){
 #section-four-content{
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 350px));
-  grid-gap: 5vw;
 }
 
 
@@ -374,7 +348,17 @@ footer #footer-content{
     right: 15px;
   }
   
+  .two-columns{
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .card{
+    min-width: 100%;
+    padding: 5px 0;
+  }
+
+  .two-columns .column{
     min-width: 100%;
   }
 
@@ -388,17 +372,15 @@ footer #footer-content{
   #section-two{
     flex-direction: column;
   }
-  
-  #section-two span.bio{
-    width: inherit;
-    order: 1;
-    max-width: initial;
+  #section-two .column-with-mugshot{
+    order: -1;
+  }
+ 
+  #section-two .mugshot{
+    margin: 5px 0;
   }
 
-  #section-three .skill-wrapper{
-    flex-direction: column;
-    align-items: center;
-  }
+
   #section-five{
     flex-direction: column;
   }
@@ -414,6 +396,10 @@ footer #footer-content{
   #section-four-content{
     grid-template-columns: 1fr;
   }
+  #section-five-content .portfolio-image{
+  max-width: 200px;
+  padding: 0;
+}
 }
 
 
@@ -452,10 +438,10 @@ section *:not(.decoration){
   background-color: rgba(131, 245, 44, 0.7);
 }
 .neon-purple, .purple-card > *{
-  background-color: rgba(110, 13, 208, 0.7);
+  background-color: rgba(110, 13, 208, 0.6);
 }
 .neon-orange, .orange-card > *{
-  background-color: rgba(255, 102, 0, 0.9);
+  background-color: rgba(255, 102, 0, 0.8);
 }
 .grey-light, .grey-light-card p, .grey-light-card small{
   background-color: rgba(200, 200, 200, 0.7);
