@@ -91,6 +91,7 @@ function populatePortfolio(portfolioId){
         el.href = portfolioContent[portfolioId].siteLink
         break
       case 'portfolio-githubLink':
+        el.style.display = portfolioContent[portfolioId].githubLink === 'private' ? 'none' : 'inline'
         el.href = portfolioContent[portfolioId].githubLink
         break
       case 'portfolio-description':
