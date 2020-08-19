@@ -40,14 +40,6 @@ function randomiseDecoration(decoration){
   
 }
 
-
-function applySnapping(){
-  const snapperElements = [...document.querySelectorAll('section')]
-  bodyEl.classList.add('snap-parent')
-  snapperElements.forEach(section => section.classList.add('snap'))
-}
-
-
 // Change the heading based on scroll position
 function scrollHandler() {
   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
@@ -154,19 +146,14 @@ function domLoaded(){
   bodyEl.classList.add('loaded')
   
   //Set events
-  //on font load - there was an issue with document sizing due to a delay with font rendering, so I included this check for external fonts before rendering the decoration randomisation
+  //on font load - there was an issue with document sizing due to a delay with font rendering, 
+  //so I included this check for external fonts before rendering the decoration randomisation
   document.fonts.onloadingdone = ()=>{
     decorations.forEach(randomiseDecoration)
-
-    // add the snapping behaviour to the body and sections - we need to do this thanks to some weird behaviour in chrome where it stops working after a page ajustment
-    applySnapping()
-
   }
 
-  window.onscroll = () => scrollHandler()
-
-
   // Update scroll position for first time
+  window.onscroll = () => scrollHandler()
   scrollHandler()
   // set up the portfolio section
   populatePortfolio(0)
@@ -178,6 +165,15 @@ document.addEventListener('DOMContentLoaded', domLoaded)
 
 
 const portfolioContent = [
+  {
+    name: 'Arma tu Sketch',
+    subtitle: 'A sharable room sketching application',
+    description: 'An interactive shopping experience for a Mexican Furniture retailer. Built using fabric.js to create a canvas where produts can be dragged around, and the perfect room design can be created.',
+    tech: 'fabric.js, JavaScript, Vue.js, Python',
+    siteLink: 'https://www.gaiadesign.com.mx/menu-galeria',
+    githubLink: 'private',
+    screen: './img/sketch.png'
+  },
   {
     name: 'picoBank',
     subtitle: 'A modern bank app with analytics.',
