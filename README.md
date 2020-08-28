@@ -1,6 +1,6 @@
 # Tom Tidswell - Portfolio
 
-My portfolio of development work
+My portfolio of development work. 
 
 
 ## picoBank - A modern bank app with analytics.
